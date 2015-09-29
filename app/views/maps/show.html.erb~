@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @map.title %>
+</p>
+
+<% if @map.complete == true %>
+
+<p>
+  <strong style="vertical-align:top;">Map:</strong>
+  <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
+</p>
+<p>
+  <strong> Map on Google Maps </strong>
+<a href= <%= "http://maps.google.com/maps?q=#{@map.latitude},#{@map.longitude}" %>> Here </a>
+</p>
+
+ <iframe width="600" height="450" frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD7lu5wMR0E8opsrjyBUQZNrFHWlZrdlXM
+    &q=<%= "#{@map.latitude},#{@map.longitude}"%>
+    &attribution_source=Aerial+Maps+.+Info
+    &attribution_web_url=http://www.aerialmaps.info/
+  " allowfullscreen> </iframe></br>
+<%= end %>
+
+<%= link_to 'Edit', edit_user_map_url(@map.user.id,@map) %> |
+<%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %> |
+<%= link_to 'Back', user_maps_path(@map.user.id) %>
+

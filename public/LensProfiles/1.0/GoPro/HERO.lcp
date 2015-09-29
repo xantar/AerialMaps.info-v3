@@ -1,0 +1,73 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.5-c002 1.148022, 2012/07/15-18:06:45        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+    xmlns:stCamera="http://ns.adobe.com/photoshop/1.0/camera-profile">
+   <photoshop:CameraProfiles>
+    <rdf:Seq>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="GoPro"
+       stCamera:Model="HERO"
+       stCamera:CameraRawProfile="False"
+       stCamera:CameraPrettyName="HERO"
+       stCamera:LensPrettyName="HERO"
+       stCamera:ProfileName="Adobe (HERO)"
+       stCamera:SensorFormatFactor="6"
+       stCamera:ImageWidth="2592"
+       stCamera:ImageLength="1944"
+       stCamera:FocalLength="2.5"
+       stCamera:FocusDistance="0.477508"
+       stCamera:ApertureValue="2.970854">
+      <stCamera:FisheyeModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:FocalLengthX="0.507263"
+        stCamera:FocalLengthY="0.507263"
+        stCamera:ImageXCenter="0.51005"
+        stCamera:ImageYCenter="0.502709"
+        stCamera:ResidualMeanError="0.00013"
+        stCamera:ResidualStandardDeviation="0.000092"
+        stCamera:RadialDistortParam1="-0.034056"
+        stCamera:RadialDistortParam2="0.011916">
+       <stCamera:ChromaticRedGreenModel
+        stCamera:FocalLengthX="0.511426"
+        stCamera:FocalLengthY="0.511426"
+        stCamera:ImageXCenter="0.510019"
+        stCamera:ImageYCenter="0.502662"
+        stCamera:ResidualMeanError="0.000106"
+        stCamera:ResidualStandardDeviation="0.000063"
+        stCamera:ScaleFactor="1.00015"
+        stCamera:RadialDistortParam1="-0.000693"
+        stCamera:RadialDistortParam2="0"
+        stCamera:RadialDistortParam3="0.00061"/>
+       <stCamera:ChromaticGreenModel
+        stCamera:FocalLengthX="0.511426"
+        stCamera:FocalLengthY="0.511426"
+        stCamera:ImageXCenter="0.510019"
+        stCamera:ImageYCenter="0.502662"
+        stCamera:ResidualMeanError="0.0001"
+        stCamera:ResidualStandardDeviation="0.000062"
+        stCamera:RadialDistortParam1="-0.040566"
+        stCamera:RadialDistortParam2="0.013821"/>
+       <stCamera:ChromaticBlueGreenModel
+        stCamera:FocalLengthX="0.511426"
+        stCamera:FocalLengthY="0.511426"
+        stCamera:ImageXCenter="0.510019"
+        stCamera:ImageYCenter="0.502662"
+        stCamera:ResidualMeanError="0.000144"
+        stCamera:ResidualStandardDeviation="0.00011"
+        stCamera:ScaleFactor="1.000365"
+        stCamera:RadialDistortParam1="0.000172"
+        stCamera:RadialDistortParam2="0.001598"
+        stCamera:RadialDistortParam3="-0.002201"/>
+       </rdf:Description>
+      </stCamera:FisheyeModel>
+      </rdf:Description>
+     </rdf:li>
+    </rdf:Seq>
+   </photoshop:CameraProfiles>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

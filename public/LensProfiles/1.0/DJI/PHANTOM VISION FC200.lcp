@@ -1,0 +1,75 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.5-c002 1.148022, 2012/07/15-18:06:45        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+    xmlns:stCamera="http://ns.adobe.com/photoshop/1.0/camera-profile">
+   <photoshop:CameraProfiles>
+    <rdf:Seq>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe Systems, Inc."
+       stCamera:Make="DJI"
+       stCamera:Model="PHANTOM VISION FC200"
+       stCamera:CameraRawProfile="False"
+       stCamera:CameraPrettyName="PHANTOM VISION FC200"
+       stCamera:LensPrettyName="PHANTOM VISION FC200"
+       stCamera:ProfileName="Adobe (PHANTOM VISION FC200)"
+       stCamera:SensorFormatFactor="5.643778"
+       stCamera:ImageWidth="4384"
+       stCamera:ImageLength="3288"
+       stCamera:FocalLength="5"
+       stCamera:FocusDistance="1.570823"
+       stCamera:ApertureValue="2.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:FocalLengthX="0.601474"
+        stCamera:FocalLengthY="0.601474"
+        stCamera:ImageXCenter="0.504757"
+        stCamera:ImageYCenter="0.517984"
+        stCamera:ResidualMeanError="0.009902"
+        stCamera:ResidualStandardDeviation="0.018443"
+        stCamera:RadialDistortParam1="-0.354597"
+        stCamera:RadialDistortParam2="0.119435"
+        stCamera:RadialDistortParam3="-0.018339">
+       <stCamera:ChromaticRedGreenModel
+        stCamera:FocalLengthX="0.60149"
+        stCamera:FocalLengthY="0.60149"
+        stCamera:ImageXCenter="0.504768"
+        stCamera:ImageYCenter="0.517995"
+        stCamera:ResidualMeanError="0.009897"
+        stCamera:ResidualStandardDeviation="0.018448"
+        stCamera:ScaleFactor="1.000181"
+        stCamera:RadialDistortParam1="0.00029"
+        stCamera:RadialDistortParam2="-0.000741"
+        stCamera:RadialDistortParam3="0.000598"/>
+       <stCamera:ChromaticGreenModel
+        stCamera:FocalLengthX="0.60149"
+        stCamera:FocalLengthY="0.60149"
+        stCamera:ImageXCenter="0.504768"
+        stCamera:ImageYCenter="0.517995"
+        stCamera:ResidualMeanError="0.00989"
+        stCamera:ResidualStandardDeviation="0.018426"
+        stCamera:RadialDistortParam1="-0.354821"
+        stCamera:RadialDistortParam2="0.119587"
+        stCamera:RadialDistortParam3="-0.018376"/>
+       <stCamera:ChromaticBlueGreenModel
+        stCamera:FocalLengthX="0.60149"
+        stCamera:FocalLengthY="0.60149"
+        stCamera:ImageXCenter="0.504768"
+        stCamera:ImageYCenter="0.517995"
+        stCamera:ResidualMeanError="0.009903"
+        stCamera:ResidualStandardDeviation="0.018462"
+        stCamera:ScaleFactor="1.00064"
+        stCamera:RadialDistortParam1="0.00143"
+        stCamera:RadialDistortParam2="-0.00279"
+        stCamera:RadialDistortParam3="0.001636"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+    </rdf:Seq>
+   </photoshop:CameraProfiles>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

@@ -1,0 +1,39 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c011 79.156380, 2014/05/21-23:38:37        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+    xmlns:stCamera="http://ns.adobe.com/photoshop/1.0/camera-profile">
+   <photoshop:CameraProfiles>
+    <rdf:Seq>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="DJI"
+       stCamera:Model="FC300S"
+       stCamera:CameraRawProfile="False"
+       stCamera:CameraPrettyName="FC300S"
+       stCamera:LensPrettyName="PHANTOM 3 FC300S"
+       stCamera:ProfileName="Adobe (PHANTOM 3 FC300S)"
+       stCamera:SensorFormatFactor="5.6"
+       stCamera:ImageWidth="4000"
+       stCamera:ImageLength="3000"
+       stCamera:FocusDistance="1.521578"
+       stCamera:ApertureValue="2.970854">
+      <stCamera:PerspectiveModel
+       stCamera:Version="2"
+       stCamera:FocalLengthX="0.563549"
+       stCamera:FocalLengthY="0.563549"
+       stCamera:ImageXCenter="0.500137"
+       stCamera:ImageYCenter="0.516933"
+       stCamera:ResidualMeanError="0.000583"
+       stCamera:ResidualStandardDeviation="0.001256"
+       stCamera:RadialDistortParam1="-0.132236"
+       stCamera:RadialDistortParam2="0.099737"
+       stCamera:RadialDistortParam3="-0.017192"/>
+      </rdf:Description>
+     </rdf:li>
+    </rdf:Seq>
+   </photoshop:CameraProfiles>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>
