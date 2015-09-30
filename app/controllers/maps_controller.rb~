@@ -1,5 +1,4 @@
 class MapsController < ApplicationController
-  before_filter :check_session
   before_action :set_map, only: [:show, :edit, :update, :destroy]
 
   # GET /maps
