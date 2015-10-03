@@ -11,16 +11,21 @@
 
 <div class="navbar navbar-inverse" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Aerialmaps.info', root_path, class: 'navbar-brand' %>
-    </div>
-     </div>
+	<div class="navbar-header">
+	      <%= link_to 'AerialMaps.info', root_path, class: 'navbar-brand' %>
+	    </div>
+	    <div id="navbar">
+	      <% if current_user %>
+		<ul class="nav navbar-nav pull-right">
+		  <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+		  <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+		</ul>
+	      <% else %>
+		<ul class="nav navbar-nav">
+		</ul>
+	      <% end %>
+	    </div>
+  </div>
 </div>
 
 <div class="container">

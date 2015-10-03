@@ -10,8 +10,17 @@ class ApplicationController < ActionController::Base
   end
 
   def check_session
-    if @current_user.nil
+#Check if user is logged in 
+    if session[:user_id]
+#Check if user belongs
     then 
+      if session[:user_id]==params[:user_id]
+      then
+        redirect_to root_url
+      else
+        
+      end
+    else
       redirect_to login_url
     end
   end
