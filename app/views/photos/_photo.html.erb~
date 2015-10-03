@@ -1,9 +1,11 @@
 <li class="col-xs-3">
   <%= link_to image_tag(photo.image.thumb('180x180#').url, alt: photo.image_name, class: 'img-thumbnail'),
               photo.image.remote_url, target: '_blank' %>
-  <% if photo.image_name.present? %>
-    <p><%= photo.image_name %></p>
-  <% end %>
-    <p><%= link_to 'Destroy', user_map_photo_url(photo.map.user.id,photo.map.id,photo.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="caption">
+    <% if photo.image_name.present? %>
+      <p><%= photo.image_name %></p>
+    <% end %>
+    <p><%= link_to 'Destroy', user_map_photo_url(photo.map.user.id,photo.map.id,photo.id), method: :delete, class: 'btn btn-primary', role: 'button' , data: { confirm: 'Are you sure?' } %></p>
+  </div>
      
 </li>

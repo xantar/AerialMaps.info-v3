@@ -24,7 +24,14 @@
   " allowfullscreen> </iframe></br>
 <% end %>
 
-<%= link_to 'Edit', edit_user_map_url(@map.user.id,@map) %> |
-<%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %> |
-<%= link_to 'Back', user_maps_path(@map.user.id) %>
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Back to Maps', user_maps_path(@map.user.id) %></li>
+      <li><%= link_to 'Edit Map', edit_user_map_url(@map.user.id,@map) %></li>
+      <li><%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %></li>
+    </ul>
+  </div>
+</div>
+
 

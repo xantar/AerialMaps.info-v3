@@ -1,26 +1,31 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Maps</h1>
+<div class="page-header">
+  <h1><%= "#{current_user.name}'s Maps" %></h1>
+</div>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th colspan="5"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @maps.each do |map| %>
       <tr>
-        <td><%= map.title %></td>
-        <td><img src="<%= map.image_uid %>"></td>
-        <td><%= link_to 'Show', user_map_url(map.user.id,map) %></td>
-        <td><%= link_to 'Edit', edit_user_map_url(map.user.id,map) %></td>
-        <td><%= link_to 'Destroy', user_map_url(map.user.id,map), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map) %></td>
-        <td><%= link_to 'Generate', generate_url(map.user.id,map) %></td>
+        <td><h3><%= "#{map.title}" %></h3></td>
+        <td width="20px"></td>
+        <td>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
+                <%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
+                <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn btn-success" %>
+            <%= link_to 'Generate', generate_url(map.user.id,map), class: "btn btn-success" %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +33,12 @@
 
 <br>
 
-<%= link_to 'New Map', new_user_map_path %>
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'New Map', new_user_map_path %></li>
+    </ul>
+  </div>
+</div>
+
+

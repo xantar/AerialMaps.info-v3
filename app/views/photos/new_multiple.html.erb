@@ -1,11 +1,12 @@
-<h1>List of photos</h1>
-
+<div class="page-header">
+<h1>Photos for <%= "#{Map.find_by(id: params[:maps_id]).title}" %> Map </h1>
+</div>
 <ul class="row" id="photos-list">
-  <%= render @photos.where map_id: params[:maps_id] %>
+  <%= render @photos.where(map_id: params[:maps_id]) %>
 </ul>
 
-<h3>Upload multiple photos</h3>
-<div id="dropzone" class="fade">Drop files here</div>
+<h3>Upload photos</h3>
+<div id="dropzone" class="fade">Drag & Drop Images</div>
 
 <%= form_for @photo do |f| %>
 
@@ -14,7 +15,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :image, 'Choose files here' %>
+    <%= f.label :image, 'Choose images' %>
     <%= f.file_field :image, required: true, multiple: true, name: 'photo[image]' %>
   </div>
 
@@ -28,8 +29,15 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', user_maps_path(params[:user_id]) %> |
-<%= link_to 'Generate', generate_url(params[:user_id],params[:maps_id]) %>
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Back to Maps', user_maps_path(params[:user_id]) %></li>
+      <li><%= link_to "Back to #{Map.find_by(id: params[:maps_id]).title}", user_map_path(params[:user_id],params[:maps_id]) %></li>
+      <li><%= link_to 'Generate Map', generate_url(params[:user_id],params[:maps_id]) %></li>
+    </ul>
+  </div>
+</div>
 
 <script>
   $(document).ready(function() {

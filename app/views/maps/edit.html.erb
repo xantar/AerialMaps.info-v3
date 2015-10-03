@@ -2,5 +2,11 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', user_map_path %> |
-<%= link_to 'Back', user_maps_path %>
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Back to Maps', user_maps_path %></li>
+      <li><%= link_to 'Show Map', user_map_path %></li>
+    </ul>
+  </div>
+</div>

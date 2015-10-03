@@ -46,7 +46,7 @@
 
 #dropzone.hover {
   background: lawngreen;
-  border: 10px solid darken(lawngreen, 10%);
+  border: 5px solid darken(lawngreen, 10%);
 }
 
 #dropzone.fade {
