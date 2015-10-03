@@ -212,7 +212,7 @@ Degree=0
 Amount=0
 
 [LensProfile]
-LCPFile=/home/xantar/project/aerialmaps.info/public/LensProfiles/1.0/DJI/PHANTOM VISION FC200.lcp
+LCPFile=/home/xantar/project/aerialmaps.info-v2/public/LensProfiles/1.0/DJI/PHANTOM VISION FC200.lcp
 UseDistortion=true
 UseVignette=true
 UseCA=false

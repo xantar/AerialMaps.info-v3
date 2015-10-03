@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cameras
   resources :photos, only: [:new, :create]
 #  get '/photos/new_multiple', to: 'photos#new_multiple', as: :new_photo_multiple
   get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple

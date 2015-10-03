@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ARG1=$1
+ARG2=$2
 >&2 echo $1
 
 cd public
