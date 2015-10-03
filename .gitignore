@@ -15,7 +15,7 @@
 /db/*.sqlite3-journal
 
 #ignore image sets
-/public/processing/*
+/public/processing/*/*
 /public/photos/development/unproc/*
 
 # Ignore all logfiles and tempfiles.
@@ -23,7 +23,3 @@
 !/log/.keep
 /tmp
 
-#ignore tmp files from editors
-*~
-*.*~
-*.swp
