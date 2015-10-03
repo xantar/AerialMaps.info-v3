@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20151003001011) do
     t.string   "image_name"
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "camera"
+    t.string   "map_mode"
     t.string   "taken_at"
     t.string   "user_id"
     t.boolean  "complete"

@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore omniauth.rb for security
-/config/initializers/omniauth.rb
+#config/initializers/omniauth.rb
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -24,6 +24,6 @@
 /tmp
 
 #ignore tmp files from editors
-/*~
-/*.*~
-/*.swp
+*~
+*.*~
+*.swp
