@@ -17,6 +17,7 @@
 #ignore image sets
 /public/processing/*/*
 /public/photos/development/unproc/*
+/public/photos/development/maps/*.png
 
 # Ignore all logfiles and tempfiles.
 /log/*
