@@ -11,14 +11,12 @@ class ApplicationController < ActionController::Base
 
   def check_session
 #Check if user is logged in 
-    if session[:user_id]
+    if current_user
 #Check if user belongs
     then 
-      if session[:user_id]==params[:user_id]
+      if current_user.id=="1"
       then
-        redirect_to root_url
-      else
-        
+        fail
       end
     else
       redirect_to login_url

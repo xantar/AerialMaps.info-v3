@@ -13,7 +13,8 @@ mkdir $1
 >&2 echo '------------------------------------'
 >&2 echo '  Starting Lens Profile Correction'
 >&2 echo '------------------------------------'
-rawtherapee -o $1 -p ../RTProfiles/DJI-P2.pp3 -c ../photos/development/unproc/$1
+#rawtherapee -o $1 -p ../RTProfiles/DJI-P2.pp3 -c ../photos/development/unproc/$1
+cp ../photos/development/unproc/$1/*.jpg  $1/
 >&2 echo '------------------------------------'
 >&2 echo '     Finished Lens Correction'
 >&2 echo '------------------------------------'

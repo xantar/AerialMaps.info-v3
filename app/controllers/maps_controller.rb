@@ -5,7 +5,7 @@ class MapsController < ApplicationController
   # GET /maps
   # GET /maps.json
   def index
-    @maps = Map.all
+    @maps = Map.where(user_id: current_user.id)
   end
 
   def generate
