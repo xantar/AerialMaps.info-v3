@@ -37,7 +37,7 @@ IMGC=`ls -l ./*.$ARG1 | wc -l`
 
 ### Generate Project
 
-  /usr/bin/pto_gen -o ./project.pto -f 10 -p 0 `cat ./order_auto.out`;
+  /usr/bin/pto_gen -o ./project.pto -f 1 -p 0 `cat ./order_auto.out`;
 
 ### Generate Control Points
 cp ../../images/map_generating.png ../../photos/development/maps/$MAP.png

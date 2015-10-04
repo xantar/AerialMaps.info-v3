@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151003001011) do
     t.string   "map_mode"
     t.string   "taken_at"
     t.string   "user_id"
+    t.boolean  "processing"
     t.boolean  "complete"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
