@@ -37,7 +37,7 @@ class MapsController < ApplicationController
 
     respond_to do |format|
       if @map.save
-        format.html { redirect_to user_map_url(@map.user.id,@map), notice: 'Map was successfully created.' }
+        format.html { redirect_to new_user_map_photo_multiple_url(@map.user.id,@map), notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }

@@ -3,10 +3,10 @@
   <h1><%= "#{current_user.name}'s Maps" %></h1>
 </div>
 
-<table>
+<div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
-      <tv></th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,8 +17,7 @@
     <% @maps.each do |map| %>
       <tr>
         <td></td>
-        <td><h3><%= "#{map.title}" %></h3></td>
-        <td width="20px"></td>
+        <td><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
         <td>
           <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                 <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
@@ -32,6 +31,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

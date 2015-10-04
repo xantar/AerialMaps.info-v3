@@ -22,6 +22,7 @@ class PhotosController < ApplicationController
         @photo.gps_latitude="#{@myexifr.gps.latitude}"
         @photo.gps_longitude="#{@myexifr.gps.longitude}"
       end
+      @photo.camera="#{@myexifr.model}"
       @photo.taken_at="#{@myexifr.date_time_original}"
       @photo.save
       format.html { redirect_to new_photo_path }

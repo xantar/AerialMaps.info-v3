@@ -6,6 +6,10 @@
 </p>
 
 <% if @map.complete == true %>
+<p>
+  <strong>Title:</strong>
+  <%= @map.camera %>
+</p>
 
 <p>
   <strong style="vertical-align:top;">Map:</strong>
@@ -38,5 +42,11 @@
     </ul>
   </div>
 </div>
+
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 10000);
+</script>
 
 

@@ -5,6 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :user_id
       t.string :image_name
       t.integer :map_id
+      t.string :camera
       t.float :gps_latitude
       t.float :gps_longitude
       t.string :taken_at

@@ -24,6 +24,9 @@ ARG3=8
 ## Matching Method 'linearmatch' or 'multirow'
 ARG4=$2
 
+## Map ID
+MAP=$3
+
 ## Generate Order
 ls -v ./*.$ARG1 > ./order_auto.out
 
@@ -37,6 +40,9 @@ IMGC=`ls -l ./*.$ARG1 | wc -l`
   /usr/bin/pto_gen -o ./project.pto -f 10 -p 0 `cat ./order_auto.out`;
 
 ### Generate Control Points
+cp ../../images/map_generating.png ../../photos/development/maps/$MAP.png
+cp ../../images/map_generating.png ../../photos/development/maps/"$MAP"_20.png
+
 sleep 1
 if [ $ARG4 == prealigned ] ; then
   /usr/bin/cpfind -n 1 --prealigned --minmatches 20 --sieve1width=20 --sieve1height=20 --sieve2width=10 --sieve2width=10 -o ./project.pto ./project.pto
@@ -47,6 +53,8 @@ else
 fi
 
 ### Optimiser
+cp ../../images/map_optomising.png ../../photos/development/maps/$MAP.png
+cp ../../images/map_optomising.png ../../photos/development/maps/"$MAP"_20.png
 sleep 1
 /usr/bin/autooptimiser -p -a -n -o ./project.pto ./project.pto
 
@@ -60,6 +68,9 @@ sleep 1
 echo "IMG Count: " $IMGC
 
 ### Enblend
+cp ../../images/map_combining.png ../../photos/development/maps/$MAP.png
+cp ../../images/map_combining.png ../../photos/development/maps/"$MAP"_20.png
+
 sleep 1
 enblend --compression=$ARG2 -d $ARG3 --wrap=NONE --fine-mask -a -o ./project5m.tif ./project_*.tif
 
