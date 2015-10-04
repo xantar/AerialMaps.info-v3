@@ -11,6 +11,7 @@ class CreateMaps < ActiveRecord::Migration
       t.string :map_mode
       t.string :taken_at
       t.string :user_id
+      t.boolean :processing
       t.boolean :complete
 
       t.timestamps null: false
