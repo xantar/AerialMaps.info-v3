@@ -16,7 +16,7 @@
 ARG1=$1
 
 ### Compression
-ARG2="JPEG"
+ARG2="LZW"
 
 ### Color Depth
 ARG3=8
@@ -56,7 +56,7 @@ fi
 cp ../../images/map_optomising.png ../../photos/development/maps/$MAP.png
 cp ../../images/map_optomising.png ../../photos/development/maps/"$MAP"_20.png
 sleep 1
-/usr/bin/autooptimiser -p -a -n -o ./project.pto ./project.pto
+/usr/bin/autooptimiser -p -a -n -s -o ./project.pto ./project.pto
 
 sleep 1
 /usr/bin/pano_modify --projection=0 -c -o ./project.pto ./project.pto

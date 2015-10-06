@@ -38,15 +38,16 @@
       <li><%= link_to 'Back to Maps', user_maps_path(@map.user.id) %></li>
       <li><%= link_to 'Edit Map', edit_user_map_url(@map.user.id,@map) %></li>
       <li><%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %></li>
-      <li><%= link_to 'Generate Map', generate_url(params[:user_id],params[:id]) %></li>
+      <li><%= link_to 'Generate Map', generate_url(@map.user.id,@map) %></li>
     </ul>
   </div>
 </div>
 
+<% if @map.processing == true %>
 <script>
 setTimeout(function(){
    window.location.reload(1);
 }, 10000);
 </script>
-
+<% end %>
 

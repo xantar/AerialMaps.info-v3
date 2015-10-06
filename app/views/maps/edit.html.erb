@@ -1,6 +1,65 @@
 <h1>Editing Map</h1>
 
-<%= render 'form' %>
+<%= form_for(@map) do |f| %>
+  <% if @map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@map.errors.count, "error") %> prohibited this map from being saved:</h2>
+
+      <ul>
+      <% @map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :camera %><br>
+    <%= f.text_field :camera %>
+  </div>
+
+  <div class="field">
+    <%= f.label :map_mode %><br>
+    <%= f.text_field :map_mode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :image_uid %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :image_name %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => params[:user_id] %>
+  </div>
+  <div class="field">
+    <%= f.label "Map Processing" %><br>
+    <%= f.check_box :processing %>
+  </div>
+  <div class="field">
+    <%= f.label "Map Complete" %><br>
+    <%= f.check_box :complete %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">

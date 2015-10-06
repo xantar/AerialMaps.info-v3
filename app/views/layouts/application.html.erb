@@ -26,6 +26,7 @@
 	    <div id="collapse navbar-collapse">
           ::before
 		<ul class="nav navbar-nav pull-right">
+                <li><%= link_to 'Camera Support', cameras_path %></li>
 		  <li><%= image_tag current_user.image_url, alt: current_user.name, size: "50x50" %></li>
 		  <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
 		</ul>

@@ -1,0 +1,571 @@
+9
+------------------------------------
+  Starting Lens Profile Correction Lens: 1
+            on Map: 9
+------------------------------------
+Lens 1
+RawTherapee, version 4.0.12.0
+WARNING: closing this window will close RawTherapee!
+
+Processing: ../photos/development/unproc/9/DJI00413.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00413.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00413.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00410.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00410.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00410.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00415.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00415.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00415.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00409.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00409.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00409.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00412.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00412.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00412.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00414.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00414.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00414.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00416.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00416.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00416.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00421.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00421.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00421.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00419.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00419.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00419.JPG.meta.yml
+Processing: ../photos/development/unproc/9/DJI00420.JPG
+  Merging procparams #0
+Processing: ../photos/development/unproc/9/DJI00420.JPG.meta.yml
+Error loading file: ../photos/development/unproc/9/DJI00420.JPG.meta.yml
+------------------------------------
+     Finished Lens Correction
+------------------------------------
+------------------------------------
+           Starting Mosaic
+------------------------------------
+Generating pto file...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00409.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00410.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00412.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00413.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00414.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00415.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00416.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00419.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00420.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/9/dji00421.jpg...
+
+Assigned 1 lenses.
+
+Written output to /home/ubuntu/AerialMaps.info-v3/public/processing/9/project.pto
+Hugin's cpfind 2013.0.0.4692917e7a55
+based on Pan-o-matic by Anael Orlinski
+
+Project contains the following images:
+Image 0
+  Imagefile: dji00409.jpg
+  Remapped : no
+Image 1
+  Imagefile: dji00410.jpg
+  Remapped : no
+Image 2
+  Imagefile: dji00412.jpg
+  Remapped : no
+Image 3
+  Imagefile: dji00413.jpg
+  Remapped : no
+Image 4
+  Imagefile: dji00414.jpg
+  Remapped : no
+Image 5
+  Imagefile: dji00415.jpg
+  Remapped : no
+Image 6
+  Imagefile: dji00416.jpg
+  Remapped : no
+Image 7
+  Imagefile: dji00419.jpg
+  Remapped : no
+Image 8
+  Imagefile: dji00420.jpg
+  Remapped : no
+Image 9
+  Imagefile: dji00421.jpg
+  Remapped : no
+
+--- Analyze Images ---
+i0 : Analyzing image...
+i1 : Analyzing image...
+i2 : Analyzing image...
+i3 : Analyzing image...
+i4 : Analyzing image...
+i5 : Analyzing image...
+i6 : Analyzing image...
+i7 : Analyzing image...
+i8 : Analyzing image...
+i9 : Analyzing image...
+
+--- Find matches ---
+i0 <> i1 : Found 39 matches
+i1 <> i2 : Found 0 matches
+i2 <> i3 : Found 37 matches
+i3 <> i4 : Found 44 matches
+i4 <> i5 : Found 43 matches
+i5 <> i6 : Found 42 matches
+i6 <> i7 : Found 13 matches
+i7 <> i8 : Found 0 matches
+i8 <> i9 : Found 46 matches
+
+--- Find matches in images groups ---
+i0 <> i2 : Found 0 matches
+i0 <> i7 : Found 0 matches
+i0 <> i8 : Found 0 matches
+i0 <> i9 : Found 0 matches
+i1 <> i7 : Found 0 matches
+i1 <> i8 : Found 0 matches
+i1 <> i9 : Found 0 matches
+i2 <> i7 : Found 0 matches
+i2 <> i8 : Found 0 matches
+i2 <> i9 : Found 0 matches
+i7 <> i9 : Found 32 matches
+
+--- Find pair-wise matches ---
+i0 <> i3 : Found 0 matches
+i0 <> i4 : Found 0 matches
+i0 <> i5 : Found 0 matches
+i0 <> i6 : Found 0 matches
+i1 <> i3 : Found 12 matches
+i1 <> i4 : Found 0 matches
+i1 <> i5 : Found 0 matches
+i1 <> i6 : Found 0 matches
+i2 <> i4 : Found 0 matches
+i2 <> i5 : Found 0 matches
+i2 <> i6 : Found 0 matches
+i3 <> i5 : Found 21 matches
+i3 <> i6 : Found 0 matches
+i3 <> i7 : Found 0 matches
+i3 <> i8 : Found 0 matches
+i3 <> i9 : Found 0 matches
+i4 <> i6 : Found 30 matches
+i4 <> i7 : Found 0 matches
+i4 <> i8 : Found 0 matches
+i4 <> i9 : Found 0 matches
+i5 <> i7 : Found 0 matches
+i5 <> i8 : Found 0 matches
+i5 <> i9 : Found 0 matches
+i6 <> i8 : Found 0 matches
+i6 <> i9 : Found 0 matches
+
+--- Write Project output ---
+Written output to ./project.pto
+
+Detection took 199.726 seconds.
+*** Adaptive geometric optimisation
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          1.44067974905283 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.115786799690351 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0550095221841493 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0522862869434829 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0522862869434829 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0522862869505955 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0519807207139745 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0519807202270272 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          3.34765331631588 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          3.33813139941177 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          3.07731663409066 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          1.29187910536127 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0249740416612286 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0249581203726693 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0249581175570158 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          2.76117141110222 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          2.74547839866585 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):           2.6433925453775 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          0.73923712961781 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):          0.06273912947696 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0627323946554233 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0627323920066723 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          4.31398092339658 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          1.92035589284909 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.218598712410501 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0612657783581798 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0603291433207197 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0603291433207197 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0603291433343627 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.059990972180746 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0599909721005024 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          4.20652759338851 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.307355008939813 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.168985594974564 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0777709253517549 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0640372198482991 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0611998215785985 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):        0.0610701030845375 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 7 iteration(s):         0.060736600130622 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 8 iteration(s):        0.0590634115571269 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 9 iteration(s):        0.0590634115571269 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0590634115683796 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0588961598806952 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0588961596712255 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          4.81017913360325 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.800454982609836 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0738013719381487 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):         0.054637640646299 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0540859437018894 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0526414530505667 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):        0.0526414530505667 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0526414530588385 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0526178277850576 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0526178274693257 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          7.74970886432094 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.109096926821865 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0639294745959413 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0552623298854738 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0552623298854738 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0552623298926253 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0546735613487616 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.054673560028715 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          9.52245386718366 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          9.46316097985511 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          5.85673199711913 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          5.07586496280119 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):          1.75886509098046 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):         0.786741204723917 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0744640489067628 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0554910833036453 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):        0.0554871897348363 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 7 iteration(s):        0.0554871810929614 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):           8.8426886037958 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.211787548949149 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0855135742315417 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0689225512503114 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0664869669117406 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0658028363794527 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0658028363900828 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0657575093599315 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0657575075324496 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):         0.056367475963349 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0563340529586681 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0563340529682854 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0561958716843153 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0561943575651444 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0561942292212784 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0561941828259176 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0561941648490848 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):         0.056194159059282 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):        0.0561979340193401 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0529480129105219 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0529217795054392 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0526112641153827 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):         0.052001071466604 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):         0.052001071473026 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):        0.0518159803652273 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):        0.0517382147362883 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):        0.0516908059123074 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):        0.0516900728498888 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):        0.0516663718466269 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):        0.0516661923532995 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 7 iteration(s):        0.0516610395997024 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 8 iteration(s):        0.0516610080252858 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 9 iteration(s):        0.0516597923060194 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 10 iteration(s):        0.0516597847677476 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 11 iteration(s):        0.0516594857084172 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 12 iteration(s):        0.0516594833977353 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 13 iteration(s):        0.0516594090826002 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 14 iteration(s):         0.051659408260322 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 15 iteration(s):        0.0516593899001451 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 16 iteration(s):        0.0516593897425782 units
+
+Setting projection to Rectilinear
+Center panorama
+Fit panorama field of view to best size
+Setting field of view to 2 x 47.9998
+
+Written output to ./project.pto
+IMG Count:  10
+enblend: info: combining non-overlapping images: ./project_0001.tif 1/1 ./project_0007.tif
+enblend: info: combining non-overlapping images: ./project_0002.tif 1/1 ./project_0009.tif
+enblend: info: combining non-overlapping images: ./project_0003.tif 1/1
+enblend: info: combining non-overlapping images: ./project_0004.tif 1/1
+enblend: info: combining non-overlapping images: ./project_0005.tif 1/1
+enblend: info: combining non-overlapping images: ./project_0006.tif 1/1
+enblend: info: combining non-overlapping images: ./project_0008.tif 1/1
+enblend: info: writing final output
+------------------------------------
+           Finished Mosaic
+------------------------------------

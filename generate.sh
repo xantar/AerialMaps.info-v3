@@ -9,15 +9,18 @@ cp images/map_correcting.png photos/development/maps/"$MAP"_20.png
 cd processing
 rm -rf $MAP
 mkdir $MAP
->&2 echo '------------------------------------'
->&2 echo "  Starting Lens Profile Correction Lens: $CAM"
->&2 echo '------------------------------------'
+echo '------------------------------------'
+echo "  Starting Lens Profile Correction Lens: $CAM"
+echo "            on Map: $MAP"
+echo '------------------------------------'
 
 #Handle different Cameras
 
 if [ $CAM == 1 ] ; then
+  echo 'Lens 1'
   rawtherapee -o $MAP -p ../RTProfiles/DJI-P2.pp3 -c ../photos/development/unproc/$MAP
 else
+  echo " Lens $CAM"
   #This is the default for an unknown camera, Dont apply a lens profile or process.
   cp ../photos/development/unproc/$MAP/*.jpg  $MAP/
   cp ../photos/development/unproc/$MAP/*.JPG  $MAP/

@@ -18,6 +18,7 @@ class MapsController < ApplicationController
 
   # GET /maps/1
   # GET /maps/1.json
+
   def show
   end
 
@@ -78,6 +79,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete)
+      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete, :processing, :camera, :map_mode, :latitude, :longitude)
     end
 end
