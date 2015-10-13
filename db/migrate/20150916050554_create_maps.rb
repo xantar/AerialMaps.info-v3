@@ -7,8 +7,10 @@ class CreateMaps < ActiveRecord::Migration
       t.string :image_name
       t.string :latitude
       t.string :longitude
+      t.string :bearing
+      t.string :distance
       t.string :camera
-      t.string :map_mode
+      t.string :mapping_method_id
       t.string :taken_at
       t.string :user_id
       t.boolean :processing

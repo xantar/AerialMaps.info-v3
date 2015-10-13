@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mapping_methods
   resources :cameras
   resources :cameras
   resources :photos, only: [:new, :create]

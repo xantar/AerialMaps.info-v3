@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003001011) do
+ActiveRecord::Schema.define(version: 20151013185308) do
 
   create_table "cameras", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mapping_methods", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,14 +32,16 @@ ActiveRecord::Schema.define(version: 20151003001011) do
     t.string   "image_name"
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "bearing"
+    t.string   "distance"
     t.string   "camera"
-    t.string   "map_mode"
+    t.string   "mapping_method_id"
     t.string   "taken_at"
     t.string   "user_id"
     t.boolean  "processing"
     t.boolean  "complete"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 20151003001011) do
     t.string   "camera"
     t.float    "gps_latitude"
     t.float    "gps_longitude"
+    t.float    "distance"
     t.string   "taken_at"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
