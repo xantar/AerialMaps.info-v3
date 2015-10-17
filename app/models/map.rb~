@@ -3,10 +3,8 @@ belongs_to :user
 has_many :photos, dependent: :destroy
 
 def checkProcess
-  res=system("./checkpid.sh #{self.id}")
-  self.processing=res
+  self.processing=system("./checkpid.sh #{self.id}")
   self.save
-  res
 end
 
 

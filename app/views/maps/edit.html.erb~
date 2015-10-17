@@ -24,8 +24,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :mappping_method %><br>
-    <%= f.text_field :mapping_method_id %>
+    <%= f.label :map_mode %><br>
+    <%= f.text_field :mapping_method %>
   </div>
 
   <div class="field">

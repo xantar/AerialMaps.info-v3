@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20151013185308) do
 
   create_table "cameras", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "lens_profile", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "mapping_methods", force: :cascade do |t|

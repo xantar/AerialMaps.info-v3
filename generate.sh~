@@ -35,6 +35,10 @@ fi
 cd $MAP
 rename 'y/A-Z/a-z/' *
 
+for file in ./*.jpg; do
+  convert "$file" -rotate $ROT "$file"
+  done
+
 >&2 echo '------------------------------------'
 >&2 echo '           Starting Mosaic'
 >&2 echo '------------------------------------'
