@@ -23,8 +23,8 @@ end
 
 def generate
 
-  self.image_uid="http://127.0.0.1:3000/photos/maps/#{self.id}.png"
-  self.thumbnail_uid="http://127.0.0.1:3000/photos/maps/#{self.id}_20.png"
+  self.image_uid="http://aerialmaps.info:3000/photos/maps/#{self.id}.png"
+  self.thumbnail_uid="http://aerialmaps.info:3000/photos/maps/#{self.id}_20.png"
   self.latitude = self.photos.all.average('gps_latitude')
   self.longitude = self.photos.all.average('gps_longitude')
 # here We should determine if the camera exists, and if it doesn't lets create a new camera w/o lens profile
