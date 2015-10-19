@@ -16,13 +16,16 @@
 
   <tbody>
     <% @maps.each do |map| %>
-      <tr>
+      <% if map.checkProcess == true %>
+        <tr class="success">
+      <% else %>
+        <tr>
+      <% end %>
         <td></td>
         <td><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
         <td>
-        <%= map.checkProcess %>
-        <% if map.processing == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px;">Processing</h3>
+        <% if map.checkProcess == true %>
+          <h4 style="margin-top:5px; margin-bottom:5px;">Generating Map</h3>
         <% end %>
 
         </td>

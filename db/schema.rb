@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.string   "mapping_method_id"
     t.string   "taken_at"
     t.string   "user_id"
-    t.boolean  "processing"
-    t.boolean  "complete"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.boolean  "processing",        default: false
+    t.boolean  "complete",          default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "photos", force: :cascade do |t|

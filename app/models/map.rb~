@@ -3,20 +3,32 @@ belongs_to :user
 has_many :photos, dependent: :destroy
 
 def checkProcess
-  self.processing=system("./checkpid.sh #{self.id}")
+  res=system("./checkpid.sh #{self.id}")
+  self.processing=res
   self.save
+  res
 end
 
+def rotateCCW
+  self.bearing=Float(self.bearing)-45
+  self.save
+  system("./rotate.sh #{self.id} #{self.bearing} &")
+end
+
+def rotateCW
+  self.bearing=Float(self.bearing)+45
+  self.save
+  system("./rotate.sh #{self.id} #{self.bearing} &")
+end
 
 def generate
 
-  self.image_uid="http://127.0.0.1:3000/photos/development/maps/#{self.id}.png"
-  self.thumbnail_uid="http://127.0.0.1:3000/photos/development/maps/#{self.id}_20.png"
+  self.image_uid="http://127.0.0.1:3000/photos/maps/#{self.id}.png"
+  self.thumbnail_uid="http://127.0.0.1:3000/photos/maps/#{self.id}_20.png"
   self.latitude = self.photos.all.average('gps_latitude')
   self.longitude = self.photos.all.average('gps_longitude')
 # here We should determine if the camera exists, and if it doesn't lets create a new camera w/o lens profile
   self.camera = self.photos.first.camera
-  self.mapping_method_id = 1
   self.taken_at = self.photos.first.taken_at
 
 # Lets calculate a bearing
@@ -27,18 +39,31 @@ def generate
   lat2 = (photo2.gps_latitude/180*Math::PI)
   lon1 = (photo1.gps_longitude/180*Math::PI)
   lon2 = (photo2.gps_longitude/180*Math::PI)
+
+  if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').third )
+    photo2 = self.photos.order('image_uid ASC').third
+    lat2 = (photo2.gps_latitude/180*Math::PI)
+    lon2 = (photo2.gps_longitude/180*Math::PI)
+  end
+
+  if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').fourth )
+    photo2 = self.photos.order('image_uid ASC').fourth
+    lat2 = (photo2.gps_latitude/180*Math::PI)
+    lon2 = (photo2.gps_longitude/180*Math::PI)
+  end
+
   dlon = lon2 - lon1
 
   y = (Math.sin(dlon)*Math.cos(lat2))
   x = ((Math.cos(lat1)*Math.sin(lat2))-(Math.sin(lat1)*Math.cos(lat2)*Math.cos(dlon)))
-  self.bearing=(Math.atan2(y,x))*(180/Math::PI)  
+  bearing=(Math.atan2(y,x))*(180/Math::PI) 
   
-
+  self.bearing=bearing
   self.processing=true
   self.complete=true
   self.save
 
-  system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} -#{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+  system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
 end
 
 end

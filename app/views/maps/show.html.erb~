@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @map.title %>
-</p>
+<div class="page-header">
+  <h1><%= @map.title %>     <small><%= @map.camera %></small></h1>
+</div>
 
 <% if @map.complete == true %>
-<p>
-  <strong>Camera:</strong>
-  <%= @map.camera %>
-</p>
 
 <p>
-  <strong style="vertical-align:top;">Map:</strong>
+  <strong style="vertical-align:top;">Map</strong>
   <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
 </p>
 
 <% if @map.latitude && @map.longitude %>
-<p> 
-  <string>Bearing:</strong>
-  <%= @map.bearing %>
-</p>
 <p>
-  <strong> Map on Google Maps </strong>
-<a href= <%= "http://maps.google.com/maps?q=#{@map.latitude},#{@map.longitude}" %>> Here </a>
+  <strong> Google Maps </strong>
+(<a href= <%= "http://maps.google.com/maps?q=#{@map.latitude},#{@map.longitude}" %>>Link</a>)
 </p>
 
  <iframe width="600" height="450" frameborder="0" style="border:0"
@@ -33,6 +26,11 @@
     &attribution_web_url=http://www.aerialmaps.info/
   " allowfullscreen> </iframe></br>
 <% end %>
+
+<% else  %>
+  <% if @map.photos.count ==0 %>
+    <h2><%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %> to This Project</h2>
+  <% end %>
 <% end %>
 
 <div class="navbar navbar-default navbar-fixed-bottom">

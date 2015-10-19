@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :mapping_methods
-  resources :cameras
-  resources :cameras
+  resources :cameras, only: [:index]
   resources :photos, only: [:new, :create]
 #  get '/photos/new_multiple', to: 'photos#new_multiple', as: :new_photo_multiple
   get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple
@@ -34,10 +32,10 @@ Rails.application.routes.draw do
   get 'users/:user_id/maps/generate/:id' => 'maps#generate', as: :generate
 #  get 'maps/generate/:id' => 'maps#generate', as: :generate
 
-# General Login
-#  root to: 'pages#index'
+# Route for Map Rotation
 
-#  resources :maps, :only => [:index, :show]
+  get 'users/:user_id/maps/rotateccw/:id' => 'maps#rotateCCW', as: :rotateCCW
+  get 'users/:user_id/maps/rotatecw/:id' => 'maps#rotateCW', as: :rotateCW
 
 #  resources :photos
   resources :maps

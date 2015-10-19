@@ -1,5 +1,10 @@
-<h1>Editing Map</h1>
+<div class="page-header">
+<h1>Editing <small><%= @map.title %></small></h1>
+</div>
 
+<div class="row">
+
+<div class="col-md-3">
 <%= form_for(@map) do |f| %>
   <% if @map.errors.any? %>
     <div id="error_explanation">
@@ -13,53 +18,69 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :camera %><br>
     <%= f.text_field :camera %>
   </div>
 
-  <div class="field">
-    <%= f.label :map_mode %><br>
-    <%= f.text_field :mapping_method %>
+  <div class="form-group">
+    <%= f.label :mappping_method %><br>
+    <%= f.collection_select :mapping_method_id, MappingMethod.all, :id, :name  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :latitude %><br>
     <%= f.text_field :latitude %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :longitude %><br>
     <%= f.text_field :longitude %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.hidden_field :image_uid %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.hidden_field :image_name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.hidden_field :user_id, :value => params[:user_id] %>
   </div>
-  <div class="field">
-    <%= f.label "Map Processing" %><br>
-    <%= f.check_box :processing %>
+  <div class="form-group">
+    <%= f.label "Map Processing" %> <%= f.check_box :processing %>
   </div>
-  <div class="field">
-    <%= f.label "Map Complete" %><br>
-    <%= f.check_box :complete %>
+  <div class="form-group">
+    <%= f.label "Map Complete" %> <%= f.check_box :complete %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
 
+<div class="col-md-4">
+<% if @map.complete == true %>
+  <h4><strong style="vertical-align:top;">Map</strong></h4>
+  <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>\'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %></small>
+<table>
+<tr>
+<td><%= link_to 'Rotate -15&deg;'.html_safe, rotateCCW_url(@map.user.id,@map) %></td>
+<td> 
+<p>
+  <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
+</p>
+</td>
+<td><%= link_to 'Rotate 15&deg;'.html_safe, rotateCW_url(@map.user.id,@map) %></td>
+</tr>
+</table>
+<% end %>
+</div>
 
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
