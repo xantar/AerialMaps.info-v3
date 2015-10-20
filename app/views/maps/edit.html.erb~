@@ -67,7 +67,7 @@
 <div class="col-md-4">
 <% if @map.complete == true %>
   <h4><strong style="vertical-align:top;">Map</strong></h4>
-  <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>\'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %></small>
+  <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %>''</small>
 <table>
 <tr>
 <td><%= link_to 'Rotate -15&deg;'.html_safe, rotateCCW_url(@map.user.id,@map) %></td>

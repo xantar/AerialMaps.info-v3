@@ -30,6 +30,8 @@
 <% else  %>
   <% if @map.photos.count ==0 %>
     <h2><%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %> to This Project</h2>
+  <% else %>
+    <h2><%= link_to 'Generate Map', generate_url(@map.user.id,@map) %></h2>
   <% end %>
 <% end %>
 

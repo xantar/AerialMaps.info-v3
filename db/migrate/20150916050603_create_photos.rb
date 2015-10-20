@@ -8,7 +8,6 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :camera
       t.float :gps_latitude
       t.float :gps_longitude
-      t.float :distance
       t.string :taken_at
 
       t.timestamps null: false
