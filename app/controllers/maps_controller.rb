@@ -10,7 +10,7 @@ class MapsController < ApplicationController
 
   def generate
     @map = Map.find(params[:id])
-    @map.generate
+    @map.queue
     respond_to do |format|
       format.html { redirect_to user_map_url(params[:user_id],params[:id]), notice: 'Map was successfully started.' }
     end
