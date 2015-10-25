@@ -76,8 +76,8 @@ def scheduele
 
   Map.all.first.refresh
 
-    while (Map.all.where( processing:  true ).count <= max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
-      currentmap = Map.all.where( queued:  true ).first
+    while (Map.all.where( processing:  true ).count < max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
+      currentmap = Map.all.where( queued:  true ).order( queued_at ASC ).first
       currentmap.generate
       Map.all.first.refresh
     end 
