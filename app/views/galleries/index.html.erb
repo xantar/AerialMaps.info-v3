@@ -15,10 +15,6 @@
   </thead>
 
   <tbody>
-    <% if Map.all.count > 0 %>
-      <% Map.all.first.scheduele %>
-    <% end %>
-
     <% @maps.each do |map| %>
       <% if map.checkProcess == true %>
         <tr class="success">
@@ -26,11 +22,7 @@
         <% if map.queued == true %>
 	  <tr class="warning">
         <% else %>
-          <% if map.complete == true %>
-            <tr class="info">
-          <% else %>
-            <tr>
-          <% end %>
+	  <tr>
         <% end %>
       <% end %>
         <td></td>
@@ -44,18 +36,10 @@
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
         <% end %>
 
-        <% if map.complete == true && map.checkProcess == false %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Finished <%= map.generated_at %></small></h3>
-        <% end %>
-
         </td>
         <td>
           <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                 <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
-                <%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
-                <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-              <%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn btn-success" %>
-            <%= link_to 'Generate', generate_url(map.user.id,map), class: "btn btn-success" %>
           </div>
         </td>
       </tr>
@@ -69,7 +53,6 @@
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li><%= link_to 'New Map', new_user_map_path %></li>
     </ul>
   </div>
 </div>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
  
   get "/login" => "pages#login", as: :login
 
+  resources :galleries
+
   resources :users do
     resources :maps do
       resources :photos 
@@ -31,6 +33,11 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/maps/generate/:id' => 'maps#generate', as: :generate
 #  get 'maps/generate/:id' => 'maps#generate', as: :generate
+
+# Route for Map Rotation
+
+  get 'users/:user_id/maps/rotateccw/:id' => 'maps#rotateCCW', as: :rotateCCW
+  get 'users/:user_id/maps/rotatecw/:id' => 'maps#rotateCW', as: :rotateCW
 
 #  resources :photos
   resources :maps

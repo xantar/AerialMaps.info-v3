@@ -24,6 +24,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :camera %><br>
+    <%= f.text_field :camera %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :mappping_method %><br>
     <%= f.collection_select :mapping_method_id, MappingMethod.all, :id, :name  %>
   </div>
@@ -42,18 +47,16 @@
     <%= f.hidden_field :image_uid %>
   </div>
   <div class="form-group">
+    <%= f.hidden_field :image_name %>
+  </div>
+  <div class="form-group">
     <%= f.hidden_field :user_id, :value => params[:user_id] %>
   </div>
   <div class="form-group">
+    <%= f.label "Map Processing" %> <%= f.check_box :processing %>
+  </div>
+  <div class="form-group">
     <%= f.label "Map Complete" %> <%= f.check_box :complete %>
-  </div>
-  <div class="form-group">
-    <%= f.label "Add to Gallery" %> <%= f.check_box :gallery %>
-    <%= f.label "GPS Shown in Gallery" %> <%= f.check_box :gallery_gps %>
-  </div>
-  <div class="form-group">
-    <%= f.label "Sharable Link" %> <%= f.check_box :public %>
-    <%= f.label "GPS Shown in Link" %> <%= f.check_box :public_gps %>
   </div>
   <div class="actions">
     <%= f.submit %>

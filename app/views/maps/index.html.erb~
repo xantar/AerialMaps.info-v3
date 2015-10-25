@@ -15,14 +15,20 @@
   </thead>
 
   <tbody>
+    <% Map.all.first.scheduele %>
+
     <% @maps.each do |map| %>
       <% if map.checkProcess == true %>
         <tr class="success">
       <% else %>
-        <% if map.processing == true %>
+        <% if map.queued == true %>
 	  <tr class="warning">
         <% else %>
-	  <tr>
+          <% if map.complete == true %>
+            <tr class="info">
+          <% else %>
+            <tr>
+          <% end %>
         <% end %>
       <% end %>
         <td></td>
@@ -30,6 +36,14 @@
         <td>
         <% if map.checkProcess == true %>
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Generating Map</small></h3>
+        <% end %>
+
+        <% if map.queued == true %>
+          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
+        <% end %>
+
+        <% if map.complete == true && map.checkProcess == false %>
+          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Finished <%= map.generated_at %></small></h3>
         <% end %>
 
         </td>

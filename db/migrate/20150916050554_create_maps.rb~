@@ -19,8 +19,6 @@ class CreateMaps < ActiveRecord::Migration
       t.boolean :complete, default: false
       t.boolean :public, default: false
       t.boolean :gallery, default: false
-      t.boolean :public_gps, default: false
-      t.boolean :gallery_gps, default: false
 
       t.timestamps null: false
     end

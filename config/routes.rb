@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :galleries
   resources :cameras, only: [:index]
   resources :photos, only: [:new, :create]
 #  get '/photos/new_multiple', to: 'photos#new_multiple', as: :new_photo_multiple
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   root to: 'pages#login'
  
   get "/login" => "pages#login", as: :login
+
+  resources :galleries, only: [:index,:show]
 
   resources :users do
     resources :maps do

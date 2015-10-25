@@ -1,6 +1,6 @@
  Generating Map:
        Lens: 1       Map: 3
-    Mapping: multirow   Bearing: 180.0
+    Mapping: multirow   Bearing: 37.562033362143815
 ------------------------------------
   Starting Lens Profile Correction
 ------------------------------------
@@ -8,54 +8,19 @@
 RawTherapee, version 4.0.12.0
 WARNING: closing this window will close RawTherapee!
 
-Processing: ../photos/unproc/3/DJI00409.JPG
+Processing: ../photos/unproc/3/DJI00354.JPG
   Merging procparams #0
-./generate.sh: line 100:  2507 Segmentation fault      (core dumped) rawtherapee -o $MAP -p ../RTProfiles/DJI-P2.pp3 -c ../photos/unproc/$MAP
-------------------------------------
-      Finished Lens Correction
-------------------------------------
-------------------------------------
-           Starting Mosaic
-------------------------------------
-ls: cannot access ./*.jpg: No such file or directory
-ls: cannot access ./*.jpg: No such file or directory
-/usr/bin/pto_gen: generate project file from images
-/usr/bin/pto_gen version 2013.0.0.4692917e7a55
-
-Usage:  /usr/bin/pto_gen [options] image1 [...]
-
-  Options:
-     -o, --output=file.pto  Output Hugin PTO file.
-     -p, --projection=INT   Projection type (default: 0)
-     -f, --fov=FLOAT        Horizontal field of view of images (default: 50)
-     -c, --crop=left,right,top,bottom        Sets the crop of input
-                            images (especially for fisheye lenses)
-     -s, --stacklength=INT  Number of images in stack
-                            (default: 1, no stacks)
-     -l, --linkstacks       Link image positions in stacks
-     --distortion           Try to load distortion information from
-                            lensfun database
-     --vignetting           Try to load vignetting information from
-                            lensfun database
-     -h, --help             Shows this help
-
-Hugin's cpfind 2013.0.0.4692917e7a55
-based on Pan-o-matic by Anael Orlinski
-WARN: 04:57:58.291943 (/build/buildd/hugin-2013.0.0+dfsg/src/hugin_base/panodata/Panorama.cpp:2055) readData(): Failed to read from dataInput.
-ERROR: couldn't parse panos tool script: './map.pto'!
-Detection took 0.002 seconds.
-could not open script : ./map.pto
-could not open script : ./map.pto
-WARN: 04:58:01.389820 (/build/buildd/hugin-2013.0.0+dfsg/src/hugin_base/panodata/Panorama.cpp:2055) readData(): Failed to read from dataInput.
-error while parsing panos tool script: map.pto
-Blending 0 Images:
-enblend: failed to open "./map_*.tif": No such file or directory
-convert.im6: unable to open image `./map.tif': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: no images defined `./output.tif' @ error/convert.c/ConvertImageCommand/3044.
-convert.im6: unable to open image `./output.tif': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: no images defined `./output.png' @ error/convert.c/ConvertImageCommand/3044.
-convert.im6: unable to open image `./output.png': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: unable to open file `./output.png' @ error/png.c/ReadPNGImage/3667.
-convert.im6: no images defined `output_20.png' @ error/convert.c/ConvertImageCommand/3044.
-cp: cannot stat ‘output.png’: No such file or directory
-cp: cannot stat ‘output_20.png’: No such file or directory
+Processing: ../photos/unproc/3/DJI00346.JPG
+Error loading file: ../photos/unproc/3/DJI00346.JPG
+Processing: ../photos/unproc/3/DJI00352.JPG
+Error loading file: ../photos/unproc/3/DJI00352.JPG
+Processing: ../photos/unproc/3/DJI00356.JPG
+Error loading file: ../photos/unproc/3/DJI00356.JPG
+Processing: ../photos/unproc/3/DJI00350.JPG
+Error loading file: ../photos/unproc/3/DJI00350.JPG
+Processing: ../photos/unproc/3/DJI00348.JPG
+Error loading file: ../photos/unproc/3/DJI00348.JPG
+Processing: ../photos/unproc/3/DJI00358.JPG
+Error loading file: ../photos/unproc/3/DJI00358.JPG
+Processing: ../photos/unproc/3/DJI00360.JPG
+Error loading file: ../photos/unproc/3/DJI00360.JPG

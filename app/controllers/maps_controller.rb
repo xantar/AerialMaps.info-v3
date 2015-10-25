@@ -82,6 +82,7 @@ class MapsController < ApplicationController
   # DELETE /maps/1
   # DELETE /maps/1.json
   def destroy
+    @map.killProcess
     @map.destroy
     respond_to do |format|
       format.html { redirect_to user_maps_url, notice: 'Map was successfully destroyed.' }
@@ -97,6 +98,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete, :processing, :camera, :mapping_method_id, :latitude, :longitude, :bearing)
+      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete, :processing, :camera, :mapping_method_id, :latitude, :longitude, :bearing, :gallery, :gallery_gps, :public, :public_gps)
     end
 end

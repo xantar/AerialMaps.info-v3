@@ -9,6 +9,13 @@ def checkProcess
   res
 end
 
+def killProcess
+  res=system("./killpid.sh #{self.id}")
+  self.processing=false
+  self.save
+  res
+end
+
 def rotateCCW
   self.bearing=Float(self.bearing)-15
   self.save

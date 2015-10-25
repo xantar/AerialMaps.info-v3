@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.boolean  "complete",          default: false
     t.boolean  "public",            default: false
     t.boolean  "gallery",           default: false
+    t.boolean  "public_gps",        default: false
+    t.boolean  "gallery_gps",       default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
   end

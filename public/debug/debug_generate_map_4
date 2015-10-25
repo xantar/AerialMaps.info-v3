@@ -1,6 +1,6 @@
  Generating Map:
        Lens: 1       Map: 4
-    Mapping: multirow   Bearing: 37.562033362143815
+    Mapping: multirow   Bearing: 142.44761074625322
 ------------------------------------
   Starting Lens Profile Correction
 ------------------------------------
@@ -8,54 +8,202 @@
 RawTherapee, version 4.0.12.0
 WARNING: closing this window will close RawTherapee!
 
-Processing: ../photos/unproc/4/DJI00351.JPG
+Processing: ../photos/unproc/4/DJI00549.jpg
   Merging procparams #0
-./generate.sh: line 100:  2520 Segmentation fault      (core dumped) rawtherapee -o $MAP -p ../RTProfiles/DJI-P2.pp3 -c ../photos/unproc/$MAP
+Processing: ../photos/unproc/4/DJI00559.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00546.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00551.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00550.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00548.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00547.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00552.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00553.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00554.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00555.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00556.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00557.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00558.jpg
+  Merging procparams #0
+Processing: ../photos/unproc/4/DJI00560.jpg
+  Merging procparams #0
 ------------------------------------
       Finished Lens Correction
 ------------------------------------
 ------------------------------------
            Starting Mosaic
 ------------------------------------
-ls: cannot access ./*.jpg: No such file or directory
-ls: cannot access ./*.jpg: No such file or directory
-/usr/bin/pto_gen: generate project file from images
-/usr/bin/pto_gen version 2013.0.0.4692917e7a55
+Generating pto file...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00546.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00547.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00548.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00549.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00550.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00551.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00552.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00553.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00554.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00555.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00556.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00557.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00558.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00559.jpg...
+Reading /home/xantar/project/AerialMaps.info-v3/public/processing/4/dji00560.jpg...
 
-Usage:  /usr/bin/pto_gen [options] image1 [...]
+Assigned 1 lenses.
 
-  Options:
-     -o, --output=file.pto  Output Hugin PTO file.
-     -p, --projection=INT   Projection type (default: 0)
-     -f, --fov=FLOAT        Horizontal field of view of images (default: 50)
-     -c, --crop=left,right,top,bottom        Sets the crop of input
-                            images (especially for fisheye lenses)
-     -s, --stacklength=INT  Number of images in stack
-                            (default: 1, no stacks)
-     -l, --linkstacks       Link image positions in stacks
-     --distortion           Try to load distortion information from
-                            lensfun database
-     --vignetting           Try to load vignetting information from
-                            lensfun database
-     -h, --help             Shows this help
-
+Written output to /home/xantar/project/AerialMaps.info-v3/public/processing/4/map.pto
 Hugin's cpfind 2013.0.0.4692917e7a55
 based on Pan-o-matic by Anael Orlinski
-WARN: 04:57:58.292500 (/build/buildd/hugin-2013.0.0+dfsg/src/hugin_base/panodata/Panorama.cpp:2055) readData(): Failed to read from dataInput.
-ERROR: couldn't parse panos tool script: './map.pto'!
-Detection took 0.002 seconds.
-could not open script : ./map.pto
-could not open script : ./map.pto
-WARN: 04:58:01.391324 (/build/buildd/hugin-2013.0.0+dfsg/src/hugin_base/panodata/Panorama.cpp:2055) readData(): Failed to read from dataInput.
-error while parsing panos tool script: map.pto
-Blending 0 Images:
-enblend: failed to open "./map_*.tif": No such file or directory
-convert.im6: unable to open image `./map.tif': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: no images defined `./output.tif' @ error/convert.c/ConvertImageCommand/3044.
-convert.im6: unable to open image `./output.tif': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: no images defined `./output.png' @ error/convert.c/ConvertImageCommand/3044.
-convert.im6: unable to open image `./output.png': No such file or directory @ error/blob.c/OpenBlob/2638.
-convert.im6: unable to open file `./output.png' @ error/png.c/ReadPNGImage/3667.
-convert.im6: no images defined `output_20.png' @ error/convert.c/ConvertImageCommand/3044.
-cp: cannot stat ‘output.png’: No such file or directory
-cp: cannot stat ‘output_20.png’: No such file or directory
+
+Project contains the following images:
+Image 0
+  Imagefile: dji00546.jpg
+  Remapped : no
+Image 1
+  Imagefile: dji00547.jpg
+  Remapped : no
+Image 2
+  Imagefile: dji00548.jpg
+  Remapped : no
+Image 3
+  Imagefile: dji00549.jpg
+  Remapped : no
+Image 4
+  Imagefile: dji00550.jpg
+  Remapped : no
+Image 5
+  Imagefile: dji00551.jpg
+  Remapped : no
+Image 6
+  Imagefile: dji00552.jpg
+  Remapped : no
+Image 7
+  Imagefile: dji00553.jpg
+  Remapped : no
+Image 8
+  Imagefile: dji00554.jpg
+  Remapped : no
+Image 9
+  Imagefile: dji00555.jpg
+  Remapped : no
+Image 10
+  Imagefile: dji00556.jpg
+  Remapped : no
+Image 11
+  Imagefile: dji00557.jpg
+  Remapped : no
+Image 12
+  Imagefile: dji00558.jpg
+  Remapped : no
+Image 13
+  Imagefile: dji00559.jpg
+  Remapped : no
+Image 14
+  Imagefile: dji00560.jpg
+  Remapped : no
+
+--- Analyze Images ---
+i0 : Analyzing image...
+i1 : Analyzing image...
+i2 : Analyzing image...
+i3 : Analyzing image...
+i4 : Analyzing image...
+i5 : Analyzing image...
+i6 : Analyzing image...
+i7 : Analyzing image...
+i8 : Analyzing image...
+i9 : Analyzing image...
+i10 : Analyzing image...
+i11 : Analyzing image...
+i12 : Analyzing image...
+i13 : Analyzing image...
+i14 : Analyzing image...
+
+--- Find matches ---
+i0 <> i1 : Found 32 matches
+i1 <> i2 : Found 42 matches
+i2 <> i3 : Found 34 matches
+i3 <> i4 : Found 45 matches
+i4 <> i5 : Found 41 matches
+i5 <> i6 : Found 19 matches
+i6 <> i7 : Found 75 matches
+i7 <> i8 : Found 65 matches
+i8 <> i9 : Found 65 matches
+i9 <> i10 : Found 0 matches
+i10 <> i11 : Found 29 matches
+i11 <> i12 : Found 39 matches
+i12 <> i13 : Found 49 matches
+i13 <> i14 : Found 46 matches
+
+--- Find matches in images groups ---
+i0 <> i9 : Found 0 matches
+i0 <> i10 : Found 0 matches
+i0 <> i14 : Found 16 matches
+i9 <> i14 : Found 0 matches
+i10 <> i14 : Found 14 matches
+
+--- Find matches for overlapping images ---
+i0 <> i2 : Found 41 matches
+i0 <> i3 : Found 31 matches
+i0 <> i4 : Found 19 matches
+i0 <> i5 : Found 20 matches
+i0 <> i6 : Found 0 matches
+i0 <> i7 : Found 0 matches
+i0 <> i8 : Found 0 matches
+i0 <> i11 : Found 0 matches
+i0 <> i12 : Found 0 matches
+i0 <> i13 : Found 15 matches
+i1 <> i3 : Found 22 matches
+i1 <> i4 : Found 23 matches
+i1 <> i5 : Found 26 matches
+i1 <> i6 : Found 0 matches
+i1 <> i7 : Found 0 matches
+i1 <> i8 : Found 0 matches
+i1 <> i9 : Found 0 matches
+i1 <> i10 : Found 0 matches
+i1 <> i11 : Found 0 matches
+i1 <> i12 : Found 19 matches
+i1 <> i13 : Found 15 matches
+i1 <> i14 : Found 28 matches
+i2 <> i4 : Found 30 matches
+i2 <> i5 : Found 19 matches
+i2 <> i6 : Found 0 matches
+i2 <> i7 : Found 0 matches
+i2 <> i8 : Found 0 matches
+i2 <> i9 : Found 0 matches
+i2 <> i10 : Found 0 matches
+i2 <> i11 : Found 0 matches
+i2 <> i12 : Found 18 matches
+i2 <> i13 : Found 16 matches
+i2 <> i14 : Found 22 matches
+i3 <> i5 : Found 23 matches
+i3 <> i6 : Found 0 matches
+i3 <> i7 : Found 0 matches
+i3 <> i8 : Found 0 matches
+i3 <> i9 : Found 0 matches
+i3 <> i10 : Found 0 matches
+i3 <> i11 : Found 0 matches
+i3 <> i12 : Found 13 matches
+i3 <> i13 : Found 19 matches
+i3 <> i14 : Found 22 matches
+i4 <> i6 : Found 0 matches
+i4 <> i7 : Found 0 matches
+i4 <> i8 : Found 0 matches
+i4 <> i9 : Found 0 matches
+i4 <> i10 : Found 0 matches
+i4 <> i11 : Found 0 matches
+i4 <> i12 : Found 16 matches
+i4 <> i13 : Found 0 matches
+i4 <> i14 : Found 19 matches
