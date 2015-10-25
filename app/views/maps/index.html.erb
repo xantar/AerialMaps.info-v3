@@ -19,7 +19,7 @@
       <% if map.checkProcess == true %>
         <tr class="success">
       <% else %>
-        <% if map.processing == true %>
+        <% if map.queued == true %>
 	  <tr class="warning">
         <% else %>
 	  <tr>
@@ -32,7 +32,7 @@
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Generating Map</small></h3>
         <% end %>
 
-        <% if map.processing == true %>
+        <% if map.queued == true %>
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
         <% end %>
 
