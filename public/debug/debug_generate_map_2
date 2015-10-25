@@ -1,0 +1,151 @@
+ Generating Map:
+       Lens: 1       Map: 2
+    Mapping: multirow   Bearing: 142.44761074625322
+------------------------------------
+  Starting Lens Profile Correction
+------------------------------------
+1 - DJI Phantom FC200 (Phantom 2 Vision & Vision +)
+RawTherapee, version 4.0.12.0
+WARNING: closing this window will close RawTherapee!
+
+Processing: ../photos/unproc/2/DJI00550.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00551.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00549.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00546.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00548.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00547.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00553.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/2/DJI00552.JPG
+Error loading file: ../photos/unproc/2/DJI00552.JPG
+Processing: ../photos/unproc/2/DJI00555.JPG
+Error loading file: ../photos/unproc/2/DJI00555.JPG
+Processing: ../photos/unproc/2/DJI00554.JPG
+Error loading file: ../photos/unproc/2/DJI00554.JPG
+Processing: ../photos/unproc/2/DJI00556.JPG
+Error loading file: ../photos/unproc/2/DJI00556.JPG
+Processing: ../photos/unproc/2/DJI00557.JPG
+Error loading file: ../photos/unproc/2/DJI00557.JPG
+Processing: ../photos/unproc/2/DJI00558.JPG
+Error loading file: ../photos/unproc/2/DJI00558.JPG
+Processing: ../photos/unproc/2/DJI00560.JPG
+Error loading file: ../photos/unproc/2/DJI00560.JPG
+Processing: ../photos/unproc/2/DJI00559.JPG
+Error loading file: ../photos/unproc/2/DJI00559.JPG
+Processing: ../photos/unproc/2/DJI00562.JPG
+Error loading file: ../photos/unproc/2/DJI00562.JPG
+Processing: ../photos/unproc/2/DJI00561.JPG
+Error loading file: ../photos/unproc/2/DJI00561.JPG
+Processing: ../photos/unproc/2/DJI00563.JPG
+Error loading file: ../photos/unproc/2/DJI00563.JPG
+Processing: ../photos/unproc/2/DJI00567.JPG
+Error loading file: ../photos/unproc/2/DJI00567.JPG
+Processing: ../photos/unproc/2/DJI00564.JPG
+Error loading file: ../photos/unproc/2/DJI00564.JPG
+Processing: ../photos/unproc/2/DJI00565.JPG
+Error loading file: ../photos/unproc/2/DJI00565.JPG
+Processing: ../photos/unproc/2/DJI00566.JPG
+Error loading file: ../photos/unproc/2/DJI00566.JPG
+Processing: ../photos/unproc/2/DJI00568.JPG
+Error loading file: ../photos/unproc/2/DJI00568.JPG
+Processing: ../photos/unproc/2/DJI00571.JPG
+Error loading file: ../photos/unproc/2/DJI00571.JPG
+Processing: ../photos/unproc/2/DJI00569.JPG
+Error loading file: ../photos/unproc/2/DJI00569.JPG
+Processing: ../photos/unproc/2/DJI00570.JPG
+Error loading file: ../photos/unproc/2/DJI00570.JPG
+Processing: ../photos/unproc/2/DJI00572.JPG
+Error loading file: ../photos/unproc/2/DJI00572.JPG
+------------------------------------
+      Finished Lens Correction
+------------------------------------
+------------------------------------
+           Starting Mosaic
+------------------------------------
+Generating pto file...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00546.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00547.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00548.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00549.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00550.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00551.jpg...
+Reading /home/ubuntu/AerialMaps.info-v3/public/processing/2/dji00553.jpg...
+
+Assigned 1 lenses.
+
+Written output to /home/ubuntu/AerialMaps.info-v3/public/processing/2/map.pto
+Hugin's cpfind 2013.0.0.4692917e7a55
+based on Pan-o-matic by Anael Orlinski
+
+Project contains the following images:
+Image 0
+  Imagefile: dji00546.jpg
+  Remapped : no
+Image 1
+  Imagefile: dji00547.jpg
+  Remapped : no
+Image 2
+  Imagefile: dji00548.jpg
+  Remapped : no
+Image 3
+  Imagefile: dji00549.jpg
+  Remapped : no
+Image 4
+  Imagefile: dji00550.jpg
+  Remapped : no
+Image 5
+  Imagefile: dji00551.jpg
+  Remapped : no
+Image 6
+  Imagefile: dji00553.jpg
+  Remapped : no
+
+--- Analyze Images ---
+i0 : Analyzing image...
+i1 : Analyzing image...
+i2 : Analyzing image...
+i3 : Analyzing image...
+ContractViolation: 
+Precondition violation!
+Unable to open file './dji00549.jpg'.
+
+An error happened while loading image : caught exception: 
+Precondition violation!
+Unable to open file './dji00549.jpg'.
+
+i4 : Analyzing image...
+ContractViolation: 
+Precondition violation!
+Unable to open file './dji00550.jpg'.
+
+An error happened while loading image : caught exception: 
+Precondition violation!
+Unable to open file './dji00550.jpg'.
+
+i5 : Analyzing image...
+ContractViolation: 
+Precondition violation!
+Unable to open file './dji00551.jpg'.
+
+An error happened while loading image : caught exception: 
+Precondition violation!
+Unable to open file './dji00551.jpg'.
+
+i6 : Analyzing image...
+ContractViolation: 
+Precondition violation!
+Unable to open file './dji00553.jpg'.
+
+An error happened while loading image : caught exception: 
+Precondition violation!
+Unable to open file './dji00553.jpg'.
+
+One or more images failed to load. Exiting.Detection took 16.056 seconds.
+could not open script : ./map.pto
+could not open script : ./map.pto

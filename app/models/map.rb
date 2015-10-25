@@ -72,14 +72,14 @@ def refresh
 end
 
 def scheduele
-  max_concurrent = 3  # Maximum number of maps generated at the same time
+  max_concurrent = 2  # Maximum number of maps generated at the same time
 
   Map.all.first.refresh
 
-    until (Map.all.where( processing:  true ).count >= max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
+    while (Map.all.where( processing:  true ).count <= max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
       currentmap = Map.all.where( queued:  true ).first
       currentmap.generate
-      Map.refresh
+      Map.all.first.refresh
     end 
 
 end
