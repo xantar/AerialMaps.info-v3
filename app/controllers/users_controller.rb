@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :check_session
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

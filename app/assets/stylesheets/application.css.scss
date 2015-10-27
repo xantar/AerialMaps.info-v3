@@ -4,6 +4,14 @@
 @import "compass/css3/opacity";
 @import "compass/css3/border-radius";
 
+#clouds{
+	padding: 100px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
 #photos-list {
   padding: 0;
   margin: 0;

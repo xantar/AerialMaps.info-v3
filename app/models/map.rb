@@ -62,36 +62,17 @@ def calcBearing
 end
 
 def queue
-  self.queued = true
-  self.queued_at = Time.now
-# Clear previous Generate records to not have their processed reaped
-  self.processing = false
-  self.generated_at = nil
-  self.save
+  if (self.photos.count >1)
+    self.queued = true
+    self.queued_at = Time.now
+  # Clear previous Generate records to not have their processed reaped
+    self.processing = false
+    self.generated_at = nil
+    self.save
 
-  self.scheduele
-end
-
-def refresh
-  Map.all.where(processing: true).each do |map|
-    map.checkProcess
+    self.scheduele
   end
 end
-
-def scheduele
-  max_concurrent = 2  # Maximum number of maps generated at the same time
-
-  Map.all.first.refresh
-
-    while (Map.all.where( processing:  true ).count < max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
-      currentmap = Map.all.where( queued:  true ).order( 'queued_at ASC' ).first
-      currentmap.generate
-      Map.all.first.refresh
-    end 
-
-end
-
-
 
 def generate
 
@@ -115,6 +96,25 @@ def generate
   self.save
 
   system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+end
+
+def self.refresh
+  Map.all.where(processing: true).each do |map|
+    map.checkProcess
+  end
+end
+
+def self.scheduele
+  max_concurrent = 2  # Maximum number of maps generated at the same time
+
+  Map.refresh
+
+    while (Map.all.where( processing:  true ).count < max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
+      currentmap = Map.all.where( queued:  true ).order( 'queued_at ASC' ).first
+      currentmap.generate
+      Map.refresh
+    end 
+
 end
 
 end

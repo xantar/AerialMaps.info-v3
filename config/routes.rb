@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
-  resources :galleries
+
+  root to: 'pages#welcome'
+
+#  resources :galleries
   resources :cameras, only: [:index]
   resources :photos, only: [:new, :create]
-#  get '/photos/new_multiple', to: 'photos#new_multiple', as: :new_photo_multiple
-  get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple
 
-  root to: 'pages#login'
- 
   get "/login" => "pages#login", as: :login
 
-  resources :galleries, only: [:index,:show]
+  get "/welcome" => "pages#welcome", as: :welcome
+
+  get "/faq" => "pages#faq", as: :faq
+
+  get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple
+ 
+  #resources :galleries, only: [:index,:show]
+
+  get "/gallery" => "galleries#index", as: :gallery
+  get "/gallery/:id" => "galleries#show", as: :gallery_map
 
   resources :users do
     resources :maps do
@@ -33,12 +41,11 @@ Rails.application.routes.draw do
 # Route for generating mosaic
 
   get 'users/:user_id/maps/generate/:id' => 'maps#generate', as: :generate
-#  get 'maps/generate/:id' => 'maps#generate', as: :generate
 
 # Route for Map Rotation
 
   get 'users/:user_id/maps/rotateccw/:id' => 'maps#rotateCCW', as: :rotateCCW
-  get 'users/:user_id/maps/rotatecw/:id' => 'maps#rotateCW', as: :rotateCW
+  get 'users/:user_id/maps/rotatecw/:id' =>  'maps#rotateCW',  as: :rotateCW
 
 #  resources :photos
   resources :maps

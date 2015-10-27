@@ -12,7 +12,7 @@ class MapsController < ApplicationController
     @map = Map.find(params[:id])
     @map.queue
     respond_to do |format|
-      format.html { redirect_to user_map_url(params[:user_id],params[:id]), notice: 'Map was successfully started.' }
+      format.html { redirect_to user_maps_path(params[:user_id]), notice: 'Map was successfully started.' }
     end
   end
 

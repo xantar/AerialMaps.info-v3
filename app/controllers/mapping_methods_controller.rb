@@ -1,5 +1,6 @@
 class MappingMethodsController < ApplicationController
-  before_action :set_mapping_method, only: [:show, :edit, :update, :destroy]
+  before_filter :check_session
+  before_action :set_mapping_method, only: [:show]
 
   # GET /mapping_methods
   # GET /mapping_methods.json

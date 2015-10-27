@@ -1,5 +1,5 @@
 class CamerasController < ApplicationController
-  before_action :set_camera, only: [:show, :edit, :update, :destroy]
+  before_action :set_camera, only: [:show, :update]
 
   # GET /cameras
   # GET /cameras.json

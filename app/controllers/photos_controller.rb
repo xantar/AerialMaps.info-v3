@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_filter :check_session
 
   def show
   end

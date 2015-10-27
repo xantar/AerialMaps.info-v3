@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.maps.count >0 %>
 <div class="page-header">
   <h1><%= "#{current_user.name}'s Maps" %></h1>
 </div>
@@ -16,7 +16,7 @@
 
   <tbody>
     <% if Map.all.count > 0 %>
-      <% Map.all.first.scheduele %>
+      <% Map.scheduele %>
     <% end %>
 
     <% @maps.each do |map| %>
@@ -45,7 +45,7 @@
         <% end %>
 
         <% if map.complete == true && map.checkProcess == false %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Finished <%= map.generated_at %></small></h3>
+          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Finished <%= time_age_in_words(map.generated_at) %></small></h3>
         <% end %>
 
         </td>
@@ -55,7 +55,7 @@
                 <%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
                 <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
               <%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn btn-success" %>
-            <%= link_to 'Generate', generate_url(map.user.id,map), class: "btn btn-success" %>
+            <%= link_to 'Generate', generate_url(map.user.id,map), class: "btn btn-success", data: { confirm: 'Are you sure?' } %>
           </div>
         </td>
       </tr>
@@ -63,8 +63,14 @@
   </tbody>
 </table>
 </div>
+<% else %>
 
-<br>
+<div class="row"><div class="col-md-offset-2"><h1> Hello <%= "#{current_user.name}" %></h1></div></div>
+<div class="row"><div class="col-md-offset-3"><h2><small>Let's get started by <strong><%= link_to 'creating a Map project', new_user_map_path %></strong></small></h2></div></div>
+
+
+<% end %>
+
 
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
