@@ -15,12 +15,9 @@
   </thead>
 
   <tbody>
-    <% if Map.all.count > 0 %>
-      <% Map.scheduele %>
-    <% end %>
 
     <% @maps.each do |map| %>
-      <% if map.checkProcess == true %>
+      <% if map.processing == true %>
         <tr class="success">
       <% else %>
         <% if map.queued == true %>
@@ -36,7 +33,7 @@
         <td></td>
         <td><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
         <td>
-        <% if map.checkProcess == true %>
+        <% if map.processing == true %>
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Generating Map</small></h3>
         <% end %>
 
@@ -44,8 +41,10 @@
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
         <% end %>
 
-        <% if map.complete == true && map.checkProcess == false %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Finished <%= time_age_in_words(map.generated_at) %></small></h3>
+        <% if map.complete == true && map.processing == false %>
+          <% if map.generated_at %>
+            <h3 style="margin-top:5px; margin-bottom:5px;"><small><%= time_ago_in_words(map.generated_at) %> ago</small></h3>
+          <% end %>
         <% end %>
 
         </td>
@@ -80,4 +79,11 @@
   </div>
 </div>
 
+<% if Map.where( processing: true ).count > 0 %>
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 60000);
+</script>
+<% end %>
 

@@ -43,3 +43,5 @@ convert ./output.png -resize $TWIDTH output_20.png
 #################### Step 2: Copy Final Images ####################
 cp output.png ../../photos/maps/$MAP.png
 cp output_20.png ../../photos/maps/"$MAP"_20.png
+
+echo "Rotate Complete"

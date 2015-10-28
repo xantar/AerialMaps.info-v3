@@ -61,6 +61,13 @@ def calcBearing
   bearing
 end
 
+def checkCamera
+  if ( Camera.where( name: self.photos.first.camera ).count > 0 )
+  else
+    Camera.create!( :name => self.photos.first.camera )
+  end
+end
+
 def queue
   if (self.photos.count >1)
     self.queued = true
@@ -70,18 +77,19 @@ def queue
     self.generated_at = nil
     self.save
 
-    self.scheduele
+    Map.scheduele
   end
 end
 
 def generate
 
-  self.image_uid="http://aerialmaps.info:3000/photos/maps/#{self.id}.png"
-  self.thumbnail_uid="http://aerialmaps.info:3000/photos/maps/#{self.id}_20.png"
+  self.image_uid="http://aerialmaps.info/photos/maps/#{self.id}.png"
+  self.thumbnail_uid="http://aerialmaps.info/photos/maps/#{self.id}_20.png"
   self.latitude = self.photos.all.average('gps_latitude')
   self.longitude = self.photos.all.average('gps_longitude')
 # here We should determine if the camera exists, and if it doesn't lets create a new camera w/o lens profile
   self.camera = self.photos.first.camera
+  self.checkCamera
   self.taken_at = self.photos.first.taken_at
 
   if ( !self.bearing ) 
@@ -105,7 +113,7 @@ def self.refresh
 end
 
 def self.scheduele
-  max_concurrent = 2  # Maximum number of maps generated at the same time
+  max_concurrent = 1  # Maximum number of maps generated at the same time
 
   Map.refresh
 

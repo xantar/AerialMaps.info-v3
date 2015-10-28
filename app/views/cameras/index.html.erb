@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -16,6 +17,7 @@
     <% @cameras.each do |camera| %>
       <tr>
         <td><h3><%= camera.name %></h3></td>
+        <td><h3><small><% if camera.lens_profile %>Lens Correction Supported<% end %></small></h3>
       </tr>
     <% end %>
   </tbody>
