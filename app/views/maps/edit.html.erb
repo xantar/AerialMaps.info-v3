@@ -1,6 +1,6 @@
 <% Map.refresh %>
 
-<% if @map.processing=true %>
+<% if @map.processing==true %>
   <div class="table-responsive">
     <table class="table table-striped">
       <tr class="success"><td style="text-align:center;"><h1 style="margin-top:0;"><span class="label label-success">Map Being Processed</span></h1></td></tr>
@@ -82,7 +82,7 @@
 <table>
 <tr>
 <td>
-<% if @map.processing=true %>
+<% if @map.processing==true %>
 <% else %>
 <%= link_to 'Rotate -15&deg;'.html_safe, rotate_url(@map.user.id,@map,15) %><br><br>
 <%= link_to 'Rotate -45&deg;'.html_safe, rotate_url(@map.user.id,@map,45) %><br><br>
@@ -95,7 +95,7 @@
 </p>
 </td>
 <td>
-<% if @map.processing=true %>
+<% if @map.processing==true %>
 <% else %>
 <%= link_to 'Rotate 15&deg;'.html_safe, rotate_url(@map.user.id,@map,-15) %><br><br>
 <%= link_to 'Rotate 45&deg;'.html_safe, rotate_url(@map.user.id,@map,-45) %><br><br>
