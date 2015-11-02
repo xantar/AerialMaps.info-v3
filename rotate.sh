@@ -36,6 +36,9 @@ cd processing
 pwd
 cd $MAP
 pwd
+
+# Store the PID in $MAP/process.id
+echo $$ > $MAP/process.id
 #################### Step 1: Rotate & Recomplress Final Map ####################
 convert ./output.tif -compress $COMP -depth $DEPTH -rotate $ROT -transparent white ./output.png
 convert ./output.png -resize $TWIDTH output_20.png

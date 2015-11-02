@@ -17,17 +17,9 @@ class MapsController < ApplicationController
     end
   end
 
-  def rotateCCW
+  def rotate
     @map = Map.find(params[:id])
-    @map.rotateCCW
-    respond_to do |format|
-      format.html { redirect_to edit_user_map_url(params[:user_id],params[:id]) }
-    end
-  end
-
-  def rotateCW
-    @map = Map.find(params[:id])
-    @map.rotateCW
+    @map.rotate(params[:rot])
     respond_to do |format|
       format.html { redirect_to edit_user_map_url(params[:user_id],params[:id]) }
     end

@@ -1,51 +1,18 @@
-<p id="notice"><%= notice %></p>
 <div class="page-header">
-  <h1>Gallery</h1>
+<h1>Public Gallery</h1>
 </div>
 
-<div class="table-responsive">
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @maps.each do |map| %>
-      <% if map.checkProcess == true %>
-        <tr class="success">
-      <% else %>
-        <% if map.queued == true %>
-	  <tr class="warning">
-        <% else %>
-	  <tr>
-        <% end %>
-      <% end %>
-        <td></td>
-        <td><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
-        <td>
-        <% if map.checkProcess == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Generating Map</small></h3>
-        <% end %>
-
-        <% if map.queued == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
-        <% end %>
-
-        </td>
-        <td>
-          <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row" id="photos-list">
+  <% @maps.each do |map| %>
+    <div  class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= link_to image_tag(map.thumbnail_uid, alt:map.title, class: 'img-thumbnail', style:"background:#000;"), map.image_uid, target: '_blank' %>
+        <div class="caption">
+          <h3 style="margin:0;"><%= link_to("#{map.title}", gallery_map_url(map.id)) %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <br>
@@ -53,6 +20,7 @@
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <ul class="nav navbar-nav">
+      <li><%= link_to 'Back', :back %></li>
     </ul>
   </div>
 </div>

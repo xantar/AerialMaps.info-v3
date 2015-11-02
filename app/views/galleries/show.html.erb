@@ -1,7 +1,4 @@
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-
+<% if @map.gallery=true %>
 <div class="page-header">
   <h1><%= @map.title %>     <small><%= @map.camera %></small></h1>
 </div>
@@ -13,7 +10,7 @@
   <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
 </p>
 
-<% if @map.latitude && @map.longitude %>
+<% if @map.latitude && @map.longitude && @map.gallery_gps=true %>
 <p>
   <strong> Google Maps </strong>
 (<a href= <%= "http://maps.google.com/maps?q=#{@map.latitude},#{@map.longitude}" %>>Link</a>)
@@ -35,13 +32,12 @@
   <% end %>
 <% end %>
 
+<% end %>
+
 <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li><%= link_to 'Back to Maps', user_maps_path(@map.user.id) %></li>
-      <li><%= link_to 'Edit Map', edit_user_map_url(@map.user.id,@map) %></li>
-      <li><%= link_to 'Add Photos', new_user_map_photo_multiple_url(@map.user.id,@map) %></li>
-      <li><%= link_to 'Generate Map', generate_url(@map.user.id,@map) %></li>
+      <li><%= link_to 'Back to Gallery', gallery_path %></li>
     </ul>
   </div>
 </div>

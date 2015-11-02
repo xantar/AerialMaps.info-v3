@@ -1,6 +1,17 @@
+<% Map.refresh %>
+
+<% if @map.processing=true %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr class="success"><td style="text-align:center;"><h1 style="margin-top:0;"><span class="label label-success">Map Being Processed</span></h1></td></tr>
+    </table>
+  </div>
+<% end %>
+
 <div class="page-header">
 <h1>Editing <small><%= @map.title %></small></h1>
 </div>
+
 
 <div class="row">
 
@@ -64,16 +75,33 @@
 <div class="col-md-4">
 <% if @map.complete == true %>
   <h4><strong style="vertical-align:top;">Map</strong></h4>
-  <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %>''</small>
+  <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %>''</small><br>
+<% if @map.processing=true %>
+  <strong style="vertical-align:top;"><span class="label label-danger">Map Rotation not available while Map is being Processed</span></strong>
+<% end %>
 <table>
 <tr>
-<td><%= link_to 'Rotate -15&deg;'.html_safe, rotateCCW_url(@map.user.id,@map) %></td>
+<td>
+<% if @map.processing=true %>
+<% else %>
+<%= link_to 'Rotate -15&deg;'.html_safe, rotate_url(@map.user.id,@map,15) %><br><br>
+<%= link_to 'Rotate -45&deg;'.html_safe, rotate_url(@map.user.id,@map,45) %><br><br>
+<%= link_to 'Rotate -90&deg;'.html_safe, rotate_url(@map.user.id,@map,90) %>
+<% end %>
+</td>
 <td> 
 <p>
   <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
 </p>
 </td>
-<td><%= link_to 'Rotate 15&deg;'.html_safe, rotateCW_url(@map.user.id,@map) %></td>
+<td>
+<% if @map.processing=true %>
+<% else %>
+<%= link_to 'Rotate 15&deg;'.html_safe, rotate_url(@map.user.id,@map,-15) %><br><br>
+<%= link_to 'Rotate 45&deg;'.html_safe, rotate_url(@map.user.id,@map,-45) %><br><br>
+<%= link_to 'Rotate 90&deg;'.html_safe, rotate_url(@map.user.id,@map,-90) %>
+<% end %>
+</td>
 </tr>
 </table>
 <% end %>

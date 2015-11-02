@@ -16,14 +16,9 @@ def killProcess
   res
 end
 
-def rotateCCW
-  self.bearing=Float(self.bearing)-15
-  self.save
-  system("./rotate.sh #{self.id} #{self.bearing} &")
-end
-
-def rotateCW
-  self.bearing=Float(self.bearing)+15
+def rotate(rot)
+  self.bearing=Float(self.bearing)-Float(rot)
+  self.processing=true
   self.save
   system("./rotate.sh #{self.id} #{self.bearing} &")
 end
@@ -108,7 +103,11 @@ end
 
 def self.refresh
   Map.all.where(processing: true).each do |map|
-    map.checkProcess
+    res = map.checkProcess
+    if (res=false)
+      map.processing=false
+      map.save
+    end
   end
 end
 
