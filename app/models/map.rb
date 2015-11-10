@@ -2,9 +2,28 @@ class Map < ActiveRecord::Base
 belongs_to :user
 has_many :photos, dependent: :destroy
 
+def checkStatus
+  status = self.status
+  case status
+  when 1
+  when 2
+  when 3
+  when 4
+  when 5  
+  when 6
+  when 8  
+  when 99
+  else
+  end
+			  
+end
+
 def checkProcess
   res=system("./checkpid.sh #{self.id}")
   self.processing=res
+  if File.exists?("public/processing/#{self.id}/process.status")
+    self.status=File.open("public/processing/#{self.id}/process.status").first.to_i
+  end
   self.save
   res
 end
@@ -45,13 +64,19 @@ def calcBearing
       lon2 = (photo2.gps_longitude/180*Math::PI)
     end
 
+    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').fifth )
+      photo2 = self.photos.order('image_uid ASC').fifth
+      lat2 = (photo2.gps_latitude/180*Math::PI)
+      lon2 = (photo2.gps_longitude/180*Math::PI)
+    end
+	
     dlon = lon2 - lon1
 
     y = (Math.sin(dlon)*Math.cos(lat2))
     x = ((Math.cos(lat1)*Math.sin(lat2))-(Math.sin(lat1)*Math.cos(lat2)*Math.cos(dlon)))
     bearing=(Math.atan2(y,x))*(180/Math::PI) 
   else
-    bearing=nil
+    bearing=0
   end
   bearing
 end
@@ -64,7 +89,7 @@ def checkCamera
 end
 
 def queue
-  if (self.photos.count >1)
+  if ( self.photos.count >1 )
     self.queued = true
     self.queued_at = Time.now
   # Clear previous Generate records to not have their processed reaped
@@ -104,15 +129,29 @@ end
 def self.refresh
   Map.all.where(processing: true).each do |map|
     res = map.checkProcess
-    if (res=false)
-      map.processing=false
+    if ( res==false )
+      # Process finished so lets mark the object as finished
+  	  map.processing=false
+      # Check if status is Done? & if final file exists
+	  #Check for final output file(s)
+	  finalfile = "/public/processing/#{map.id}/output.tif"
+	  if ( File.exists?(finalfile) )
+	    # Success! 
+      else 
+	    # Fail!
+		map.failed=true
+		map.complete=false
+	  end
       map.save
+	  
     end
   end
 end
 
 def self.scheduele
+  # This should be Close to the # of cores. but REMEMBER thumbnail generation and rotation take threads, so lower is more efficient.
   max_concurrent = 1  # Maximum number of maps generated at the same time
+  
 
   Map.refresh
 

@@ -11,6 +11,8 @@ class CreateMaps < ActiveRecord::Migration
       t.string :mapping_method_id
       t.string :taken_at
       t.string :user_id
+	  t.integer :status
+	  t.boolean :failed, defauilt: false
       
       t.boolean :queued, default: false
       t.datetime :queued_at

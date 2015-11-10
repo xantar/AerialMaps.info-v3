@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.string   "mapping_method_id"
     t.string   "taken_at"
     t.string   "user_id"
+    t.integer  "status"
+    t.boolean  "failed"
     t.boolean  "queued",            default: false
     t.datetime "queued_at"
     t.boolean  "processing",        default: false

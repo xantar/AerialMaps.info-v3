@@ -76,6 +76,7 @@ mkdir $MAP
 
 # Store the PID in $MAP/process.id
 echo $$ > $MAP/process.id
+echo "1" > $MAP/process.status
 
 echo " Generating Map:"
 echo "       Lens: $CAM       Map: $MAP"
@@ -92,6 +93,14 @@ echo '------------------------------------'
 if [ $CAM == 1 ] ; then
   echo '1 - DJI Phantom FC200 (Phantom 2 Vision & Vision +)'
   rawtherapee -o $MAP -p ../RTProfiles/DJI-P2.pp3 -c ../photos/unproc/$MAP
+ 
+  ## Check exit status, if error then exit ##
+  if [ $? == 0 ]; then
+    echo "2" > $MAP/process.status
+  else
+    exit $?
+  fi
+  
 else
   echo "Lens $CAM - unknown Camera, Skipping Lens Correction"
   #This is the default for an unknown camera, Dont apply a lens profile or process.
@@ -136,6 +145,13 @@ else
   /usr/bin/cpfind --linearmatch --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
 fi
 
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "3" > process.status
+else
+  exit $?
+fi
+
 #################### Step 2: Control Point Optimization ####################
 
 # Set the temporary image for the Map Project to Control Point Optomization
@@ -173,6 +189,13 @@ sleep 1
 
 /usr/bin/autooptimiser -p -a -n -m -o ./map.pto ./map.pto
 
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "4" > process.status
+else
+  exit $?
+fi
+
 sleep 1
 ### Run Pano_Modify to set projection to 0 and Center the Panorama
 #Usage:  pano_modify [options] input.pto
@@ -196,6 +219,13 @@ sleep 1
 #     -h, --help             Shows this help
 ###
 /usr/bin/pano_modify --projection=0 -c -o ./map.pto ./map.pto
+
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "5" > process.status
+else
+  exit $?
+fi
 
 sleep 1
 ### Run Nona 
@@ -236,6 +266,13 @@ sleep 1
 #                   DEFLATE   deflate compression
 ###
 /usr/bin/nona -z $COMP -m TIFF_m -o ./map_ map.pto
+
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "6" > process.status
+else
+  exit $?
+fi
 
 #################### Step 3: Blending Images ####################
 
@@ -348,10 +385,25 @@ sleep 1
 ###
 enblend --compression=$COMP2 -d $DEPTH --wrap=NONE --fine-mask -a -o ./map.tif ./map_*.tif
 
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "7" > process.status
+else
+  exit $?
+fi
+
 ### Run Convert
 
 #################### Step 4: Compress Final Map ####################
 convert ./map.tif -trim ./output.tif
+
+## Check exit status, if error then exit ##
+if [ $? == 0 ]; then
+  echo "8" > process.status
+else
+  exit $?
+fi
+
 convert ./output.tif -compress $COMP3 -depth $DEPTH -rotate $ROT -transparent white ./output.png
 convert ./output.png -resize $TWIDTH output_20.png
 
