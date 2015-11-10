@@ -26,15 +26,16 @@ gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
 gem 'compass-rails'
 gem 'compass'
 
+gem 'sqlite3'
+
 group :development do
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+#  gem 'rails_12factor'
   gem 'rack-cache'
 end
 

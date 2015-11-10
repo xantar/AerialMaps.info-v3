@@ -22,8 +22,6 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
-  
-  def 
-
+ 
   helper_method :current_user
 end

@@ -23,32 +23,44 @@
         <% if map.queued == true %>
 	  <tr class="warning">
         <% else %>
-          <% if map.complete == true %>
-            <tr class="info">
+          <% if map.failed == true %>
+            <tr class="danger">
           <% else %>
-            <tr>
-          <% end %>
+  	 	    <% if map.complete == true %>
+              <tr class="info">
+            <% else %>
+              <tr>
+            <% end %>
+		  <% end %>
         <% end %>
       <% end %>
         <td></td>
-        <td><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
+        <td style="vertical-align:middle;"><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
         <td>
         <% if map.processing == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Generating Map</small></h3>
+          <h3 style="margin-top:5px; margin-bottom:5px; text-align:center;"><small>Generating Map</small></h3>
+  		  <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= map.status %>" aria-valuemin="0" aria-valuemax="8" style="width: 60%;">
+            </div>
+          </div>
         <% end %>
 
         <% if map.queued == true %>
           <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Queued</small></h3>
         <% end %>
 
-        <% if map.complete == true && map.processing == false %>
+		<% if map.failed == true %>
+          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Generation Failed</small></h3>
+        <% end %>
+		
+        <% if map.complete == true && map.processing == false && map.failed == false %>
           <% if map.generated_at %>
             <h3 style="margin-top:5px; margin-bottom:5px;"><small><%= time_ago_in_words(map.generated_at) %> ago</small></h3>
           <% end %>
         <% end %>
 
         </td>
-        <td>
+        <td style="vertical-align:middle;">
           <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                 <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
                 <%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
