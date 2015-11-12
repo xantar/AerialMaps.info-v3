@@ -6,14 +6,27 @@ def checkStatus
   status = self.status
   case status
   when 1
+    "Lens Profile Correction"
   when 2
+    "Control Point Generation"
   when 3
+    "Control Point Optomization"
   when 4
-  when 5  
+    "Panorama Optomization"
+  when 5
+    "Adjusted Image Generation"
   when 6
-  when 8  
+    "Combining Images"
+  when 7      
+    "Generating Final Image & Thumbnails"
+  when 8      
+    "Complete"
+  when 98
+    "Rotating Image"
   when 99
+    "Error Rotating"
   else
+    "Unknown"
   end
 			  
 end
@@ -88,6 +101,17 @@ def checkCamera
   end
 end
 
+def imageOrder
+  if File.exists?("public/processing/#{self.id}/image.order")
+    File.delete("public/processing/#{self.id}/image.order")
+  end
+  File.open("public/processing/#{self.id}/image.order","w") do |file|
+    self.photos.all.order( 'taken_at ASC' ).each do |image|
+      file.puts "./#{image.image_uid}\n"
+    end  
+  end
+end
+
 def queue
   if ( self.photos.count >1 )
     self.queued = true
@@ -149,18 +173,20 @@ def self.refresh
 end
 
 def self.scheduele
-  # This should be Close to the # of cores. but REMEMBER thumbnail generation and rotation take threads, so lower is more efficient.
-  max_concurrent = 1  # Maximum number of maps generated at the same time
-  
+  # This should be Close to the # of cores. but REMEMBER thumbnail generation and rotation take threads, so lower is more efficient. 
 
   Map.refresh
 
-    while (Map.all.where( processing:  true ).count < max_concurrent && Map.all.where( queued:  true ).count > 0 ) do
+    while (Map.all.where( processing:  true ).count < Map.maxProcesses && Map.all.where( queued:  true ).count > 0 ) do
       currentmap = Map.all.where( queued:  true ).order( 'queued_at ASC' ).first
       currentmap.generate
       Map.refresh
     end 
 
+end
+
+def self.maxProcesses
+    max_concurrent = 1  # Maximum number of maps generated at the same time
 end
 
 end

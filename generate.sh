@@ -106,6 +106,7 @@ else
   #This is the default for an unknown camera, Dont apply a lens profile or process.
   cp ../photos/unproc/$MAP/*.$UFT  $MAP/
   cp ../photos/unproc/$MAP/*.$FT  $MAP/
+  echo "2" > $MAP/process.status
 fi
 
 echo '------------------------------------'

@@ -1,0 +1,17 @@
+<h3>Active Processes <%= Map.where( processing: :true ).count %> / <%= Map.maxProcesses %></h3>
+
+<div class="table-responsive">
+<table class="table table-striped">
+
+  <tr>
+    <th>ID</th>
+    <th>Queued at</th>
+  </tr>
+<% Map.where( queued: :true ).order( 'queued_at ASC' ).each do |map| %>
+<tr>
+  <td><%= map.id %></td>
+  <td><%= map.queued_at %></td>
+</tr> 
+<% end %>
+
+</table>

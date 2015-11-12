@@ -50,7 +50,7 @@
         <% end %>
 
 		<% if map.failed == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px;"><small>Map Generation Failed</small></h3>
+          <h3 style="margin-top:5px; margin-bottom:5px;"><small><%= map.checkStatus %> Failed</small></h3>
         <% end %>
 		
         <% if map.complete == true && map.processing == false && map.failed == false %>

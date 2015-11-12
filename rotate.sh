@@ -39,8 +39,16 @@ pwd
 
 # Store the PID in $MAP/process.id
 echo $$ > $MAP/process.id
+echo "98" > $MAP/process.status
 #################### Step 1: Rotate & Recomplress Final Map ####################
 convert ./output.tif -compress $COMP -depth $DEPTH -rotate $ROT -transparent white ./output.png
+
+if [ $? == 0 ]; then
+  echo "8" > $MAP/process.status
+else
+  echo "99" > $MAP/process.status
+fi
+
 convert ./output.png -resize $TWIDTH output_20.png
 
 #################### Step 2: Copy Final Images ####################

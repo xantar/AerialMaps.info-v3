@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   get "/faq" => "pages#faq", as: :faq
 
-  get "/pulse" => "pages#pulse", as: :pulse
+  get "/tick" => "pages#tick", as: :tick
+
+  get "/tock" => "pages#tock", as: :tock
+
+  get "/scheduele" => "pages#scheduele", as: :scheduele
   
   get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple
 

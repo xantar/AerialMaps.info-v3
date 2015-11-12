@@ -1,0 +1,6 @@
+<% Map.scheduele %>
+
+<h1> Cron Executed at <%= Time.now %> </h1>
+<h3> Starting nested Crons </h3>
+
+<% system('./cron.sh aerialmaps.info &') %>
