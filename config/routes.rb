@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get "/gallery" => "galleries#index", as: :gallery
   get "/gallery/:id" => "galleries#show", as: :gallery_map
 
+  get "/link/:id" => "links#show", as: :link_map
+
   resources :users do
     resources :maps do
       resources :photos

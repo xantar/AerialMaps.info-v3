@@ -49,7 +49,10 @@ def killProcess
 end
 
 def rotate(rot)
-  self.bearing=Float(self.bearing)-Float(rot)
+  self.bearing=((Float(self.bearing)+Float(rot))%360)
+  if Float(self.bearing) < 0
+    self.bearing=Float(self.bearing)+360
+  end
   self.processing=true
   self.save
   system("./rotate.sh #{self.id} #{self.bearing} &")
@@ -90,6 +93,10 @@ def calcBearing
     bearing=(Math.atan2(y,x))*(180/Math::PI) 
   else
     bearing=0
+  end
+  bearing=((Float(bearing))%360)
+  if Float(bearing) < 0
+    bearing=Float(bearing)+360
   end
   bearing
 end
@@ -147,6 +154,7 @@ def generate
   self.complete=true
   self.save
 
+  self.imageOrder
   system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
 end
 

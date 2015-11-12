@@ -123,11 +123,18 @@ echo '           Starting Mosaic'
 echo '------------------------------------'
 
 # Generate Image Order
-ls -v ./*.$FT > ./image.order
+ls -v ./*.$FT > ./auto.order
 #Image Count
 IMGC=`ls -l ./*.$FT | wc -l`
 
 # Generate Project File
+
+if [ -e ./order.out ] ; then
+  /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./image.order`;
+else
+  /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./auto.order`;
+fi
+
 
   /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./image.order`;
 
