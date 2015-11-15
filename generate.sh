@@ -63,6 +63,7 @@ S2H=15
 
 # The script starts in ./ (The root directory of the Rails App)
 cd public
+echo "0" > $MAP/process.status
 
 #################### Step 1: Lens correction ####################
 
@@ -71,8 +72,10 @@ cp images/map_correcting.png photos/maps/$MAP.png
 cp images/map_correcting.png photos/maps/"$MAP"_20.png
 
 cd processing
+mv $MAP/image.order ./$MAP.order
 rm -rf $MAP
 mkdir $MAP
+mv $MAP.order $MAP/image.order
 
 # Store the PID in $MAP/process.id
 echo $$ > $MAP/process.id
@@ -129,14 +132,11 @@ IMGC=`ls -l ./*.$FT | wc -l`
 
 # Generate Project File
 
-if [ -e ./order.out ] ; then
+if [ -e ./image.order ] ; then
   /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./image.order`;
 else
   /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./auto.order`;
 fi
-
-
-  /usr/bin/pto_gen -o ./map.pto -f $FOV -p 0 `cat ./image.order`;
 
 #################### Step 2: Control Point Generation ####################
 

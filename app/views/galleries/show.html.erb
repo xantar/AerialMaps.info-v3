@@ -10,7 +10,7 @@
   <a href= <%= @map.image_uid %> > <img src="<%= @map.thumbnail_uid %>"></a>
 </p>
 
-<% if @map.latitude && @map.longitude && @map.gallery_gps=true %>
+<% if @map.latitude && @map.longitude && @map.gallery_gps==true %>
 <p>
   <strong> Google Maps </strong>
 (<a href= <%= "http://maps.google.com/maps?q=#{@map.latitude},#{@map.longitude}" %>>Link</a>)

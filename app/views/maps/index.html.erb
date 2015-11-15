@@ -9,7 +9,7 @@
     <tr>
       <th></th>
       <th></th>
-      <th></th>
+      <th width="20%"></th>
       <th></th>
     </tr>
   </thead>
@@ -36,11 +36,11 @@
       <% end %>
         <td></td>
         <td style="vertical-align:middle;"><h3 style="margin-top:5px; margin-bottom:5px;"><%= "#{map.title}" %></h3></td>
-        <td>
+        <td style="text-align:center;">
         <% if map.processing == true %>
-          <h3 style="margin-top:5px; margin-bottom:5px; text-align:center;"><small>Generating Map</small></h3>
+          <h3 style="margin-top:5px; margin-bottom:5px; text-align:center;"><small><%= map.checkStatus %></small></h3>
   		  <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="<%= map.status %>" aria-valuemin="0" aria-valuemax="8" style="width: 60%;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= map.status %>" aria-valuemin="0" aria-valuemax="8" style="width: <%= (Float(map.status)/8)*100 %>%;">
             </div>
           </div>
         <% end %>

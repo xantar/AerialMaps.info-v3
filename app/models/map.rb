@@ -5,6 +5,8 @@ has_many :photos, dependent: :destroy
 def checkStatus
   status = self.status
   case status
+  when 0
+    "Map Queued"
   when 1
     "Lens Profile Correction"
   when 2
@@ -38,7 +40,12 @@ def checkProcess
     self.status=File.open("public/processing/#{self.id}/process.status").first.to_i
   end
   self.save
-  res
+  if (self.status==0)
+    self.processing=true
+	self.save
+  else
+    self.processing
+  end
 end
 
 def killProcess
@@ -109,18 +116,29 @@ def checkCamera
 end
 
 def imageOrder
+  if Dir.exists?("public/processing/#{self.id}")
+  else
+    system("mkdir public/processing/#{self.id}")
+  end
   if File.exists?("public/processing/#{self.id}/image.order")
     File.delete("public/processing/#{self.id}/image.order")
   end
   File.open("public/processing/#{self.id}/image.order","w") do |file|
     self.photos.all.order( 'taken_at ASC' ).each do |image|
-      file.puts "./#{image.image_uid}\n"
+      file.puts "./#{image.image_name.downcase}\n"
     end  
+	file.close
   end
 end
 
 def queue
   if ( self.photos.count >1 )
+    if File.exists?("public/processing/#{self.id}/process.status")
+      File.delete("public/processing/#{self.id}/process.status")
+    end
+	self.status=0
+	self.failed=false
+  
     self.queued = true
     self.queued_at = Time.now
   # Clear previous Generate records to not have their processed reaped
@@ -128,7 +146,7 @@ def queue
     self.generated_at = nil
     self.save
 
-    Map.scheduele
+#    Map.scheduele
   end
 end
 
@@ -146,14 +164,19 @@ def generate
   if ( !self.bearing ) 
     self.bearing=self.calcBearing
   end
-
+ 
+  
+  #Remove from the queue
   self.queued=false
   self.queued_at=nil
-  self.generated_at=Time.now
+  #Add to active processes
   self.processing=true
+  self.generated_at=Time.now
+  #set Flags
   self.complete=true
   self.save
 
+  #Generate Image.order for the project
   self.imageOrder
   system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
 end
@@ -161,12 +184,12 @@ end
 def self.refresh
   Map.all.where(processing: true).each do |map|
     res = map.checkProcess
-    if ( res==false )
+    if ( res==false && map.status > 0 )
       # Process finished so lets mark the object as finished
   	  map.processing=false
       # Check if status is Done? & if final file exists
 	  #Check for final output file(s)
-	  finalfile = "/public/processing/#{map.id}/output.tif"
+	  finalfile = "public/processing/#{map.id}/map.tif"
 	  if ( File.exists?(finalfile) )
 	    # Success! 
       else 
@@ -175,14 +198,12 @@ def self.refresh
 		map.complete=false
 	  end
       map.save
-	  
     end
   end
 end
 
 def self.scheduele
   # This should be Close to the # of cores. but REMEMBER thumbnail generation and rotation take threads, so lower is more efficient. 
-
   Map.refresh
 
     while (Map.all.where( processing:  true ).count < Map.maxProcesses && Map.all.where( queued:  true ).count > 0 ) do

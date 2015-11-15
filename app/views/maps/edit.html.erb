@@ -76,7 +76,7 @@
 <% if @map.complete == true %>
   <h4><strong style="vertical-align:top;">Map</strong></h4>
   <strong style="vertical-align:top;">Bearing</strong>   <small><%= Float(@map.bearing).to_int %>&deg;<%= ((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int %>'<%= ((((Float(@map.bearing)-Float(@map.bearing).to_int)*60)-(((Float(@map.bearing)-Float(@map.bearing).to_int)*60).to_int))*60).to_int %>''</small><br>
-<% if @map.processing=true %>
+<% if @map.processing==true %>
   <strong style="vertical-align:top;"><span class="label label-danger">Map Rotation not available while Map is being Processed</span></strong>
 <% end %>
 <table>
@@ -84,9 +84,9 @@
 <td>
 <% if @map.processing==true %>
 <% else %>
-<%= link_to 'Rotate -15&deg;'.html_safe, rotate_url(@map.user.id,@map,15) %><br><br>
-<%= link_to 'Rotate -45&deg;'.html_safe, rotate_url(@map.user.id,@map,45) %><br><br>
-<%= link_to 'Rotate -90&deg;'.html_safe, rotate_url(@map.user.id,@map,90) %>
+<%= link_to 'Rotate -15&deg;'.html_safe, rotate_url(@map.user.id,@map,-15) %><br><br>
+<%= link_to 'Rotate -45&deg;'.html_safe, rotate_url(@map.user.id,@map,-45) %><br><br>
+<%= link_to 'Rotate -90&deg;'.html_safe, rotate_url(@map.user.id,@map,-90) %>
 <% end %>
 </td>
 <td> 
@@ -97,9 +97,9 @@
 <td>
 <% if @map.processing==true %>
 <% else %>
-<%= link_to 'Rotate 15&deg;'.html_safe, rotate_url(@map.user.id,@map,-15) %><br><br>
-<%= link_to 'Rotate 45&deg;'.html_safe, rotate_url(@map.user.id,@map,-45) %><br><br>
-<%= link_to 'Rotate 90&deg;'.html_safe, rotate_url(@map.user.id,@map,-90) %>
+<%= link_to 'Rotate 15&deg;'.html_safe, rotate_url(@map.user.id,@map,15) %><br><br>
+<%= link_to 'Rotate 45&deg;'.html_safe, rotate_url(@map.user.id,@map,45) %><br><br>
+<%= link_to 'Rotate 90&deg;'.html_safe, rotate_url(@map.user.id,@map,90) %>
 <% end %>
 </td>
 </tr>
