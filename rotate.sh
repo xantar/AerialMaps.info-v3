@@ -47,6 +47,7 @@ if [ $? == 0 ]; then
   echo "8" > $MAP/process.status
 else
   echo "99" > $MAP/process.status
+  exit $?
 fi
 
 convert ./output.png -resize $TWIDTH output_20.png

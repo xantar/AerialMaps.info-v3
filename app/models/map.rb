@@ -28,7 +28,7 @@ def checkStatus
   when 99
     "Error Rotating"
   else
-    "Unknown"
+    "Status: Unknown"
   end
 			  
 end
@@ -60,9 +60,15 @@ def rotate(rot)
   if Float(self.bearing) < 0
     self.bearing=Float(self.bearing)+360
   end
-  self.processing=true
-  self.save
+  if File.exists?("public/processing/#{self.id}/process.status")
+    File.delete("public/processing/#{self.id}/process.status")
+  end
+
   system("./rotate.sh #{self.id} #{self.bearing} &")
+  self.processing=true
+  self.status=0
+  self.failed=false
+  self.save
 end
 
 def calcBearing
@@ -164,8 +170,11 @@ def generate
   if ( !self.bearing ) 
     self.bearing=self.calcBearing
   end
- 
-  
+
+  #Generate Image.order for the project
+  self.imageOrder
+  system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+
   #Remove from the queue
   self.queued=false
   self.queued_at=nil
@@ -174,11 +183,7 @@ def generate
   self.generated_at=Time.now
   #set Flags
   self.complete=true
-  self.save
-
-  #Generate Image.order for the project
-  self.imageOrder
-  system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+  self.save  
 end
 
 def self.refresh
